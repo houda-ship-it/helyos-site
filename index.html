@@ -213,30 +213,6 @@
       transition: border-color 0.25s, transform 0.2s;
     }
     .btn-secondaire:hover { border-color: var(--or); transform: translateY(-1px); }
-    .hero-scroll {
-      position: absolute;
-      bottom: 2.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      opacity: 0.4;
-    }
-    .hero-scroll span {
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-    }
-    .hero-scroll-line {
-      width: 1px;
-      height: 40px;
-      background: linear-gradient(to bottom, var(--encre), transparent);
-      animation: scroll-anim 2s ease-in-out infinite;
-    }
-    @keyframes scroll-anim {
-      0%, 100% { transform: scaleY(1); opacity: 0.4; }
       50%       { transform: scaleY(0.6); opacity: 0.1; }
     }
 
@@ -730,7 +706,6 @@
     @media (prefers-reduced-motion: reduce) {
       .reveal { transition: none; opacity: 1; transform: none; }
       .hero-bg svg { animation: none; }
-      .hero-scroll-line { animation: none; }
     }
 
     /* ─── Vision ─────────────────────────────────────────────── */
@@ -1037,10 +1012,7 @@
     </div>
   </div>
 
-  <div class="hero-scroll" aria-hidden="true">
-    <span>Défiler</span>
-    <div class="hero-scroll-line"></div>
-  </div>
+
 </section>
 
 <!-- ─── Services ─────────────────────────────────────────────── -->
