@@ -30,7 +30,7 @@
 
     /* ─── Reset ──────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
+    html { scroll-behavior: smooth; font-size: 16px; scroll-padding-top: 88px; }
     body {
       background: var(--fond);
       color: var(--encre);
@@ -217,11 +217,9 @@
     }
 
     /* ─── Section commune ────────────────────────────────────── */
-    section { padding: 6rem 2rem; }
+    section { padding: 6rem 2rem; scroll-margin-top: 120px; }
     section:nth-child(even) { background: var(--fond-alt); }
-    /* Séparation visuelle entre sections adjacentes de même fond */
-    section + section { border-top: 1px solid var(--gris-fin); }
-    #contact + footer, #contact { border-top: none; }
+
     .section-inner {
       max-width: var(--max);
       margin: 0 auto;
