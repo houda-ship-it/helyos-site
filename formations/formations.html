@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programmes de formation professionnelle | Helyos — Tunis</title>
+  <meta name="description" content="Helyos propose des formations professionnelles sur mesure en management, RH, soft skills, finance, digital, HSE, vente, logistique et maintenance industrielle. Tunis et région MENA." />
+  <link rel="canonical" href="https://helyos.io/formations/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --or:       #C8880A;
+      --or-light: #F5EAD4;
+      --fond:     #FAFAF8;
+      --fond-alt: #F3F2ED;
+      --encre:    #2C2C2C;
+      --gris:     #767676;
+      --gris-fin: #D8D6CF;
+      --blanc:    #FFFFFF;
+      --display:  'Cormorant Garamond', Georgia, serif;
+      --corps:    'Inter', system-ui, sans-serif;
+      --max:      1100px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { background: var(--fond); color: var(--encre); font-family: var(--corps); font-weight: 300; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── HEADER ── */
+    .site-header {
+      background: var(--blanc);
+      border-bottom: 1px solid var(--gris-fin);
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-logo { display: flex; align-items: center; gap: 0.7rem; }
+    .site-logo img { width: 28px; height: 28px; }
+    .site-logo span {
+      font-family: var(--display);
+      font-size: 1.15rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--encre);
+    }
+    .header-nav { display: flex; align-items: center; gap: 1.8rem; }
+    .header-nav a {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gris);
+      transition: color 0.2s;
+    }
+    .header-nav a:hover, .header-nav a.active { color: var(--or); }
+    @media (max-width: 700px) { .header-nav { display: none; } }
+
+    /* ── HERO ── */
+    .page-hero {
+      background: var(--encre);
+      padding: 5rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      right: -100px; top: -100px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: rgba(200,136,10,0.05);
+      pointer-events: none;
+    }
+    .page-hero-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      position: relative;
+    }
+    .page-hero-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--or);
+      display: block;
+      margin-bottom: 1.2rem;
+    }
+    .page-hero-titre {
+      font-family: var(--display);
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 300;
+      color: var(--blanc);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    .page-hero-titre em { font-style: italic; color: var(--or); }
+    .page-hero-sous {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.5);
+      max-width: 580px;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+    .page-hero-nav {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .hero-nav-pill {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 2px;
+      color: rgba(255,255,255,0.45);
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .hero-nav-pill:hover {
+      border-color: var(--or);
+      color: var(--or);
+    }
+
+    /* ── INTRO APPROCHE ── */
+    .approche-bande {
+      background: var(--fond-alt);
+      border-bottom: 1px solid var(--gris-fin);
+      padding: 2.5rem 2rem;
+    }
+    .approche-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    @media (max-width: 700px) { .approche-inner { grid-template-columns: 1fr; gap: 1.2rem; } }
+    .approche-item { display: flex; align-items: flex-start; gap: 1rem; }
+    .approche-icone {
+      width: 36px; height: 36px;
+      flex-shrink: 0;
+      background: var(--or-light);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+    .approche-label {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--encre);
+      margin-bottom: 0.2rem;
+    }
+    .approche-desc { font-size: 0.78rem; color: var(--gris); line-height: 1.6; }
+
+    /* ── DOMAINES ── */
+    .domaines-section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+    .domaine-bloc {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 4rem;
+      padding: 3.5rem 0;
+      border-top: 1px solid var(--gris-fin);
+      align-items: start;
+    }
+    .domaine-bloc:last-child { border-bottom: 1px solid var(--gris-fin); }
+    @media (max-width: 780px) {
+      .domaine-bloc { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+
+    /* Colonne gauche */
+    .domaine-meta { position: sticky; top: 84px; }
+    .domaine-numero {
+      font-family: var(--display);
+      font-size: 4rem;
+      font-weight: 300;
+      color: var(--or-light);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      user-select: none;
+    }
+    .domaine-nom {
+      font-family: var(--display);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--encre);
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+    }
+    .domaine-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--or);
+      border: 1px solid rgba(200,136,10,0.3);
+      padding: 0.25rem 0.7rem;
+      border-radius: 2px;
+      margin-bottom: 1rem;
+    }
+    .domaine-publics {
+      font-size: 0.78rem;
+      color: var(--gris);
+      line-height: 1.6;
+    }
+    .domaine-publics strong {
+      display: block;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gris);
+      margin-bottom: 0.3rem;
+    }
+
+    /* Colonne droite */
+    .domaine-contenu {}
+    .domaine-accroche {
+      font-family: var(--display);
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--encre);
+      line-height: 1.45;
+      margin-bottom: 1.2rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid var(--gris-fin);
+    }
+    .domaine-texte {
+      font-size: 0.93rem;
+      color: var(--gris);
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+    }
+    .domaine-axes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 500px) { .domaine-axes { grid-template-columns: 1fr; } }
+    .axe-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.84rem;
+      color: var(--encre);
+      line-height: 1.5;
+    }
+    .axe-point {
+      width: 16px; height: 16px;
+      flex-shrink: 0;
+      background: var(--or-light);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+    .axe-point::after {
+      content: '';
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--or);
+    }
+    .domaine-modalites {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .modalite-pill {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 2px;
+      background: var(--fond-alt);
+      color: var(--gris);
+      border: 1px solid var(--gris-fin);
+    }
+
+    /* ── SECTION CATALOGUE ── */
+    .catalogue-section {
+      background: var(--encre);
+      padding: 5rem 2rem;
+    }
+    .catalogue-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    @media (max-width: 800px) { .catalogue-inner { grid-template-columns: 1fr; gap: 3rem; } }
+    .cat-titre-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--or);
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .cat-titre {
+      font-family: var(--display);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 300;
+      color: var(--blanc);
+      line-height: 1.15;
+      margin-bottom: 0.8rem;
+    }
+    .cat-fil { width: 40px; height: 1px; background: var(--or); margin: 1.2rem 0; }
+    .cat-sous {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.8;
+      margin-bottom: 0.5rem;
+    }
+    .cat-chiffres {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1.8rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .cat-chiffre-val {
+      font-family: var(--display);
+      font-size: 2rem;
+      color: var(--or);
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .cat-chiffre-label { font-size: 0.75rem; color: rgba(255,255,255,0.35); }
+
+    /* Formulaire catalogue */
+    .cat-form { display: flex; flex-direction: column; gap: 0.9rem; }
+    .cat-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+    @media (max-width: 500px) { .cat-form-row { grid-template-columns: 1fr; } }
+    .cat-champ { display: flex; flex-direction: column; gap: 0.35rem; }
+    .cat-champ label {
+      font-size: 0.67rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+    .cat-champ input, .cat-champ select {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--blanc);
+      font-family: var(--corps);
+      font-size: 0.88rem;
+      font-weight: 300;
+      padding: 0.75rem 1rem;
+      border-radius: 2px;
+      outline: none;
+      transition: border-color 0.2s;
+      appearance: none;
+      width: 100%;
+    }
+    .cat-champ input::placeholder { color: rgba(255,255,255,0.2); }
+    .cat-champ input:focus, .cat-champ select:focus { border-color: var(--or); }
+    .cat-champ select option { background: var(--encre); }
+    .btn-cat {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.9rem 2.2rem;
+      background: var(--or);
+      color: var(--blanc);
+      font-family: var(--corps);
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      align-self: flex-start;
+      margin-top: 0.4rem;
+    }
+    .btn-cat:hover { background: #E8A820; transform: translateY(-1px); }
+    .btn-cat:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    .cat-err {
+      font-size: 0.82rem;
+      color: #cf8f8f;
+      display: none;
+    }
+    .cat-err.visible { display: block; }
+
+    /* Zone révélation */
+    .cat-lien-zone {
+      display: none;
+      padding: 2rem;
+      background: rgba(200,136,10,0.1);
+      border: 1px solid rgba(200,136,10,0.3);
+      border-radius: 4px;
+      text-align: center;
+    }
+    .cat-lien-zone.visible { display: block; animation: fi 0.4s ease; }
+    @keyframes fi { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    .cat-lien-titre {
+      font-family: var(--display);
+      font-size: 1.3rem;
+      color: var(--blanc);
+      margin-bottom: 0.5rem;
+    }
+    .cat-lien-sous { font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-bottom: 1.5rem; }
+    .btn-voir {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.85rem 2rem;
+      background: transparent;
+      color: var(--or);
+      border: 1.5px solid var(--or);
+      border-radius: 2px;
+      font-family: var(--corps);
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      text-decoration: none;
+    }
+    .btn-voir:hover { background: var(--or); color: var(--blanc); }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: #1E1E1E;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .site-footer-logo { display: flex; align-items: center; gap: 0.6rem; }
+    .site-footer-logo img { width: 24px; height: 24px; }
+    .site-footer-logo span {
+      font-family: var(--display);
+      font-size: 1rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+    }
+    .site-footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.25); }
+    .site-footer-liens { display: flex; gap: 1.5rem; }
+    .site-footer-liens a {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .site-footer-liens a:hover { color: var(--or); }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="https://helyos.io" class="site-logo">
+    <img src="https://helyos.io/logo-helyos.png" alt="Helyos" />
+    <span>Helyos</span>
+  </a>
+  <nav class="header-nav">
+    <a href="https://helyos.io/#services">Services</a>
+    <a href="https://helyos.io/formations/" class="active">Formation</a>
+    <a href="https://helyos.io/blog/">Blog</a>
+    <a href="https://helyos.io/#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-hero-eyebrow">Programmes de formation</span>
+    <h1 class="page-hero-titre">Former, c'est<br><em>transformer</em></h1>
+    <p class="page-hero-sous">Neuf domaines d'expertise, des programmes conçus pour produire des compétences réelles et durables. En inter-entreprises à Tunis, en intra sur site, ou en modalité mixte.</p>
+    <div class="page-hero-nav">
+      <a href="#management" class="hero-nav-pill">Management</a>
+      <a href="#rh" class="hero-nav-pill">Ressources humaines</a>
+      <a href="#softskills" class="hero-nav-pill">Soft skills</a>
+      <a href="#finance" class="hero-nav-pill">Finance</a>
+      <a href="#digital" class="hero-nav-pill">Digital</a>
+      <a href="#vente" class="hero-nav-pill">Vente</a>
+      <a href="#hse" class="hero-nav-pill">HSE</a>
+      <a href="#logistique" class="hero-nav-pill">Logistique</a>
+      <a href="#maintenance" class="hero-nav-pill">Maintenance</a>
+    </div>
+  </div>
+</div>
+
+<!-- BANDE APPROCHE -->
+<div class="approche-bande">
+  <div class="approche-inner">
+    <div class="approche-item">
+      <div class="approche-icone"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8880A" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="#C8880A" stroke="none"/></svg></div>
+      <div>
+        <div class="approche-label">Pédagogie active</div>
+        <div class="approche-desc">Chaque session privilégie la mise en situation, les cas réels et l'échange entre participants.</div>
+      </div>
+    </div>
+    <div class="approche-item">
+      <div class="approche-icone"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8880A" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg></div>
+      <div>
+        <div class="approche-label">Programmes sur mesure</div>
+        <div class="approche-desc">Chaque programme est adapté au contexte, au secteur et aux enjeux spécifiques de l'entreprise.</div>
+      </div>
+    </div>
+    <div class="approche-item">
+      <div class="approche-icone"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8880A" stroke-width="1.5" stroke-linecap="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg></div>
+      <div>
+        <div class="approche-label">Évaluation intégrée</div>
+        <div class="approche-desc">Évaluation des acquis à chaud et à froid, attestation de formation, mesure de l'impact.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DOMAINES -->
+<div class="domaines-section">
+
+  <!-- 01 Management -->
+  <div class="domaine-bloc reveal" id="management">
+    <div class="domaine-meta">
+      <div class="domaine-numero">01</div>
+      <div class="domaine-nom">Management &amp; Leadership</div>
+      <span class="domaine-tag">Prioritaire</span>
+      <div class="domaine-publics">
+        <strong>Publics concernés</strong>
+        Managers de proximité, chefs d'équipe, cadres intermédiaires, directeurs opérationnels, futurs managers en prise de poste.
+      </div>
+    </div>
+    <div class="domaine-contenu">
+      <p class="domaine-accroche">Manager est un métier. Il s'apprend, se pratique et se questionne.</p>
+      <p class="domaine-texte">Le management reste la première demande de formation des entreprises tunisiennes, toutes tailles et tous secteurs confondus. Non par effet de mode, mais parce que la qualité du management de proximité conditionne directement la performance des équipes, la rétention des talents et le climat social. Nos programmes partent d'une conviction simple : le manager ne se forme pas en écoutant des théories, il se forme en agissant, en étant observé et en recevant un feedback structuré.</p>
+      <p class="domaine-texte">Nous couvrons l'ensemble du spectre managérial, de la prise de poste au développement du leadership stratégique, en passant par les situations difficiles que tout manager rencontre et pour lesquelles il est rarement préparé.</p>
+      <div class="domaine-axes">
+        <div class="axe-item"><div class="axe-point"></div>Posture et légitimité managériale</div>
+        <div class="axe-item"><div class="axe-point"></div>Animation et cohésion d'équipe</div>
+        <div class="axe-item"><div class="axe-point"></div>Délégation et responsabilisation</div>
+        <div class="axe-item"><div class="axe-point"></div>Feedback et entretiens managériaux</div>
+        <div class="axe-item"><div class="axe-point"></div>Gestion des conflits et médiation</div>
+        <div class="axe-item"><div class="axe-point"></div>Leadership situationnel et influence</div>
+        <div class="axe-item"><div class="axe-point"></div>Management à distance et hybride</div>
+        <div class="axe-item"><div class="axe-point"></div>Conduite du changement</div>
+      </div>
+      <div class="domaine-modalites">
+        <span class="modalite-pill">Inter-entreprises</span>
+        <span class="modalite-pill">Intra sur site</span>
+        <span class="modalite-pill">1 à 5 jours</span>
+        <span class="modalite-pill">Coaching individuel</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 RH -->
+  <div class="domaine-bloc reveal" id="rh">
+    <div class="domaine-meta">
+      <div class="domaine-numero">02</div>
+      <div class="domaine-nom">Ressources humaines</div>
+      <span class="domaine-tag">Prioritaire</span>
+      <div class="domaine-publics">
+        <strong>Publics concernés</strong>
+        DRH, responsables RH, gestionnaires du personnel, responsables formation, managers ayant des responsabilités RH sans formation initiale en GRH.
+      </div>
+    </div>
+    <div class="domaine-contenu">
+      <p class="domaine-accroche">Gérer les ressources humaines, c'est d'abord comprendre ce qui fait qu'une organisation fonctionne ou dysfonctionne.</p>
+      <p class="domaine-texte">En Tunisie, une grande partie des fonctions RH est exercée par des professionnels qui ont appris sur le tas, sans référentiel structuré. D'autres ont une formation initiale solide mais peinent à la mettre à jour face aux évolutions du droit du travail, des outils digitaux et des nouvelles attentes des collaborateurs. Nos programmes RH visent les deux profils, avec une approche résolument opérationnelle.</p>
+      <p class="domaine-texte">Nous traitons la GRH comme un système : chaque pratique (recrutement, évaluation, formation, rémunération) est abordée dans sa logique propre mais aussi dans ses articulations avec les autres leviers. Le droit du travail tunisien est intégré systématiquement, non comme un cours magistral mais comme un cadre de décision pratique.</p>
+      <div class="domaine-axes">
+        <div class="axe-item"><div class="axe-point"></div>Recrutement et sélection</div>
+        <div class="axe-item"><div class="axe-point"></div>GPEC et gestion des compétences</div>
+        <div class="axe-item"><div class="axe-point"></div>Évaluation de la performance</div>
+        <div class="axe-item"><div class="axe-point"></div>Ingénierie de la formation</div>
+        <div class="axe-item"><div class="axe-point"></div>Droit du travail tunisien</div>
+        <div class="axe-item"><div class="axe-point"></div>Administration du personnel</div>
+        <div class="axe-item"><div class="axe-point"></div>Politique de rémunération</div>
+        <div class="axe-item"><div class="axe-point"></div>Audit et diagnostic RH</div>
+      </div>
+      <div class="domaine-modalites">
+        <span class="modalite-pill">Inter-entreprises</span>
+        <span class="modalite-pill">Intra sur site</span>
+        <span class="modalite-pill">1 à 3 jours</span>
+        <span class="modalite-pill">Parcours modulaires</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 Soft skills -->
+  <div class="domaine-bloc reveal" id="softskills">
+    <div class="domaine-meta">
+      <div class="domaine-numero">03</div>
+      <div class="domaine-nom">Soft skills &amp; Développement personnel</div>
+      <span class="domaine-tag">Prioritaire</span>
+      <div class="domaine-publics">
+        <strong>Publics concernés</strong>
+        Tous niveaux hiérarchiques. Particulièrement pertinent pour les équipes en contact client, les managers, et les profils en transition professionnelle.
+      </div>
+    </div>
+    <div class="domaine-contenu">
+      <p class="domaine-accroche">Les compétences techniques ouvrent les portes. Les compétences humaines décident si on y reste.</p>
+      <p class="domaine-texte">Les soft skills ont longtemps été considérées comme innées ou secondaires. La recherche en sciences du travail et les observations terrain ont définitivement tranché : elles sont décisives pour la performance individuelle et collective, et elles s'acquièrent. Le défi est pédagogique : il ne suffit pas d'expliquer ce qu'est l'écoute active ou la gestion du stress pour que quelqu'un les pratique. Nos programmes sont conçus autour de l'expérimentation et du transfert.</p>
+      <p class="domaine-texte">Nous travaillons sur les compétences qui produisent un impact mesurable dans le quotidien professionnel, pas sur des catalogues de qualités personnelles.</p>
+      <div class="domaine-axes">
+        <div class="axe-item"><div class="axe-point"></div>Communication professionnelle</div>
+        <div class="axe-item"><div class="axe-point"></div>Prise de parole et présentation</div>
+        <div class="axe-item"><div class="axe-point"></div>Intelligence émotionnelle</div>
+        <div class="axe-item"><div class="axe-point"></div>Gestion du stress et résilience</div>
+        <div class="axe-item"><div class="axe-point"></div>Gestion du temps et des priorités</div>
+        <div class="axe-item"><div class="axe-point"></div>Créativité et résolution de problèmes</div>
+        <div class="axe-item"><div class="axe-point"></div>Team building et cohésion</div>
+        <div class="axe-item"><div class="axe-point"></div>Assertivité et gestion des tensions</div>
+      </div>
+      <div class="domaine-modalites">
+        <span class="modalite-pill">Inter-entreprises</span>
+        <span class="modalite-pill">Intra sur site</span>
+        <span class="modalite-pill">1 à 2 jours</span>
+        <span class="modalite-pill">Ateliers pratiques</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 Finance -->
+  <div class="domaine-bloc reveal" id="finance">
+    <div class="domaine-meta">
+      <div class="domaine-numero">04</div>
+      <div class="domaine-nom">Finance &amp; Gestion</div>
+      <span class="domaine-tag">Transversal</span>
+      <div class="domaine-publics">
+        <strong>Publics concernés</strong>
+        Managers non-financiers, chefs de projet, responsables d'unités, contrôleurs de gestion, comptables souhaitant élargir leurs compétences analytiques.
+      </div>
+    </div>
+    <div class="domaine-contenu">
+      <p class="domaine-accroche">Un manager qui ne lit pas un bilan prend des décisions à l'aveugle.</p>
+      <p class="domaine-texte">La maîtrise des fondamentaux financiers n'est plus réservée aux directeurs financiers. Dans un contexte où les managers opérationnels sont de plus en plus responsabilisés sur leurs résultats, savoir lire un compte de résultat, construire un budget ou analyser la rentabilité d'une décision est devenu une compétence de base. Nos programmes finance s'adressent prioritairement aux profils non-financiers, avec un langage accessible et des cas concrets tirés du contexte tunisien et régional.</p>
+      <div class="domaine-axes">
+        <div class="axe-item"><div class="axe-point"></div>Lecture et analyse des états financiers</div>
+        <div class="axe-item"><div class="axe-point"></div>Gestion budgétaire et contrôle</div>
+        <div class="axe-item"><div class="axe-point"></div>Analyse de la rentabilité</div>
+        <div class="axe-item"><div class="axe-point"></div>Trésorerie et flux de trésorerie</div>
+        <div class="axe-item"><div class="axe-point"></div>Finance pour managers opérationnels</div>
+        <div class="axe-item"><div class="axe-point"></div>Audit interne et contrôle interne</div>
+      </div>
+      <div class="domaine-modalites">
+        <span class="modalite-pill">Inter-entreprises</span>
+        <span class="modalite-pill">Intra sur site</span>
+        <span class="modalite-pill">2 à 3 jours</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 Digital -->
+  <div class="domaine-bloc reveal" id="digital">
+    <div class="domaine-meta">
+      <div class="domaine-numero">05</div>
+      <div class="domaine-nom">Digital &amp; Intelligence artificielle</div>
+      <span class="domaine-tag">Différenciant</span>
+      <div class="domaine-publics">
+        <strong>Publics concernés</strong>
+        DRH et responsables formation souhaitant intégrer l'IA dans leurs pratiques, managers en transformation digitale, équipes RH et support.
+      </div>
+    </div>
+    <div class="domaine-contenu">
+      <p class="domaine-accroche">L'intelligence artificielle ne remplace pas les professionnels qui savent l'utiliser. Elle remplace ceux qui ne savent pas.</p>
+      <p class="domaine-texte">C'est le domaine où Helyos se distingue le plus clairement de l'offre de formation tunisienne classique. Nous ne proposons pas des formations à l'informatique bureautique. Nous accompagnons les professionnels dans l'intégration concrète des outils digitaux et de l'IA générative dans leurs pratiques quotidiennes : rédaction, analyse, recrutement, formation, communication. Le point de départ est toujours le même : comment cet outil change mon travail aujourd'hui, concrètement ?</p>
+      <p class="domaine-texte">Nos formateurs pratiquent eux-mêmes ces outils au quotidien. Ce n'est pas une formation sur PowerPoint à propos de l'IA : c'est une formation avec l'IA.</p>
+      <div class="domaine-axes">
+        <div class="axe-item"><div class="axe-point"></div>IA générative pour les RH et managers</div>
+        <div class="axe-item"><div class="axe-point"></div>Outils digitaux RH et SIRH</div>
+        <div class="axe-item"><div class="axe-point"></div>Bureautique avancée (Excel, Suite Office)</div>
+        <div class="axe-item"><div class="axe-point"></div>Transformation digitale des organisations</div>
+        <div class="axe-item"><div class="axe-point"></div>E-learning et formation digitale</div>
+        <div class="axe-item"><div class="axe-point"></div>Responsabilité numérique des entreprises</div>
+      </div>
+      <div class="domaine-modalites">
+        <span class="modalite-pill">Inter-entreprises</span>
+        <span class="modalite-pill">Intra sur site</span>
+        <span class="modalite-pill">1 à 2 jours</span>
+        <span class="modalite-pill">Ateliers pratiques</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 06 Vente -->
+  <div class="domaine-bloc reveal" id="vente">
+    <div class="domaine-meta">
+      <div class="domaine-numero">06</div>
+      <div class="domaine-nom">Vente &amp; Relation client</div>
+      <span class="domaine-tag">Opérationnel</span>
+      <div class="domaine-publics">
+        <strong>Publics concernés</strong>
+        Commerciaux, chargés de clientèle, responsables grands comptes, managers commerciaux, équipes d'accueil et de service client.
+      </div>
+    </div>
+    <div class="domaine-contenu">
+      <p class="domaine-accroche">Vendre n'est pas convaincre à tout prix. C'est comprendre un besoin et y répondre avec justesse.</p>
+      <p class="domaine-texte">Les formations commerciales souffrent souvent d'un défaut de fond : elles enseignent des techniques de persuasion déconnectées de la réalité relationnelle. Nous préférons partir de la psychologie de l'achat, de la compréhension du client et de la construction d'une relation commerciale durable. Les techniques viennent en soutien d'une posture, pas à sa place.</p>
+      <p class="domaine-texte">Nos programmes couvrent aussi bien la vente B2B que la relation client B2C, avec une attention particulière aux spécificités culturelles du marché tunisien et régional.</p>
+      <div class="domaine-axes">
+        <div class="axe-item"><div class="axe-point"></div>Techniques de vente et cycle commercial</div>
+        <div class="axe-item"><div class="axe-point"></div>Négociation commerciale</div>
+        <div class="axe-item"><div class="axe-point"></div>Gestion de la relation client</div>
+        <div class="axe-item"><div class="axe-point"></div>Accueil et service client</div>
+        <div class="axe-item"><div class="axe-point"></div>Gestion des réclamations</div>
+        <div class="axe-item"><div class="axe-point"></div>Efficacité commerciale et CRM</div>
+      </div>
+      <div class="domaine-modalites">
+        <span class="modalite-pill">Inter-entreprises</span>
+        <span class="modalite-pill">Intra sur site</span>
+        <span class="modalite-pill">1 à 2 jours</span>
+        <span class="modalite-pill">Jeux de rôles</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 07 HSE -->
+  <div class="domaine-bloc reveal" id="hse">
+    <div class="domaine-meta">
+      <div class="domaine-numero">07</div>
+      <div class="domaine-nom">Hygiène, Sécurité &amp; Environnement</div>
+      <span class="domaine-tag">Réglementaire</span>
+      <div class="domaine-publics">
+        <strong>Publics concernés</strong>
+        Responsables HSE, techniciens de sécurité, caristes, opérateurs en milieu industriel, responsables de production, tout personnel exposé à des risques professionnels.
+      </div>
+    </div>
+    <div class="domaine-contenu">
+      <p class="domaine-accroche">La sécurité n'est pas une contrainte réglementaire. C'est une compétence collective qui se construit.</p>
+      <p class="domaine-texte">Les formations HSE sont souvent perçues comme des obligations légales à cocher. Nous les abordons différemment : chaque programme vise à créer une culture de la sécurité, pas une conformité de façade. Nos formateurs ont une expérience terrain dans les secteurs industriels tunisiens et savent adapter les référentiels internationaux aux réalités locales.</p>
+      <p class="domaine-texte">Nous proposons également des formations spécialisées certifiantes, notamment pour les caristes et les travaux par point chaud, conformes aux exigences réglementaires tunisiennes.</p>
+      <div class="domaine-axes">
+        <div class="axe-item"><div class="axe-point"></div>Secourisme et premiers secours (SST)</div>
+        <div class="axe-item"><div class="axe-point"></div>Habilitation caristes</div>
+        <div class="axe-item"><div class="axe-point"></div>Travail par point chaud</div>
+        <div class="axe-item"><div class="axe-point"></div>Méthode 5S et organisation du poste</div>
+        <div class="axe-item"><div class="axe-point"></div>Bilan carbone et RSE environnementale</div>
+        <div class="axe-item"><div class="axe-point"></div>Audit HSE et évaluation des risques</div>
+      </div>
+      <div class="domaine-modalites">
+        <span class="modalite-pill">Intra sur site</span>
+        <span class="modalite-pill">1 à 2 jours</span>
+        <span class="modalite-pill">Certifiant</span>
+        <span class="modalite-pill">Exercices pratiques</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 08 Logistique -->
+  <div class="domaine-bloc reveal" id="logistique">
+    <div class="domaine-meta">
+      <div class="domaine-numero">08</div>
+      <div class="domaine-nom">Logistique &amp; Transport</div>
+      <span class="domaine-tag">Sectoriel</span>
+      <div class="domaine-publics">
+        <strong>Publics concernés</strong>
+        Responsables logistique, gestionnaires de stocks, chefs d'entrepôt, coordinateurs supply chain, responsables achats et approvisionnement.
+      </div>
+    </div>
+    <div class="domaine-contenu">
+      <p class="domaine-accroche">Une supply chain performante ne s'improvise pas. Elle se pilote avec méthode.</p>
+      <p class="domaine-texte">La logistique est un secteur en forte croissance en Tunisie, porté par le développement industriel et les exigences croissantes des donneurs d'ordre internationaux. Les compétences logistiques restent pourtant insuffisamment développées dans beaucoup d'entreprises, où la fonction est souvent exercée par des profils formés sur le tas. Nos programmes visent à professionnaliser ces équipes avec des outils et des méthodes directement applicables.</p>
+      <div class="domaine-axes">
+        <div class="axe-item"><div class="axe-point"></div>Gestion des stocks et inventaires</div>
+        <div class="axe-item"><div class="axe-point"></div>Logistique opérationnelle</div>
+        <div class="axe-item"><div class="axe-point"></div>Optimisation des flux</div>
+        <div class="axe-item"><div class="axe-point"></div>Audit logistique</div>
+        <div class="axe-item"><div class="axe-point"></div>Transport et douane</div>
+        <div class="axe-item"><div class="axe-point"></div>Supply chain management</div>
+      </div>
+      <div class="domaine-modalites">
+        <span class="modalite-pill">Inter-entreprises</span>
+        <span class="modalite-pill">Intra sur site</span>
+        <span class="modalite-pill">2 à 3 jours</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 09 Maintenance -->
+  <div class="domaine-bloc reveal" id="maintenance">
+    <div class="domaine-meta">
+      <div class="domaine-numero">09</div>
+      <div class="domaine-nom">Maintenance industrielle</div>
+      <span class="domaine-tag">Technique</span>
+      <div class="domaine-publics">
+        <strong>Publics concernés</strong>
+        Techniciens de maintenance, électriciens industriels, automaticiens, responsables techniques, chefs d'atelier.
+      </div>
+    </div>
+    <div class="domaine-contenu">
+      <p class="domaine-accroche">La maintenance n'est plus une fonction subie. C'est un levier de performance industrielle.</p>
+      <p class="domaine-texte">Dans un tissu industriel tunisien de plus en plus exigeant en termes de disponibilité des équipements et de qualité, la maintenance préventive et les compétences en automatismes sont devenues stratégiques. Nos programmes techniques sont animés par des formateurs praticiens, issus du terrain industriel tunisien et maîtrisant les équipements réellement utilisés dans les usines locales.</p>
+      <div class="domaine-axes">
+        <div class="axe-item"><div class="axe-point"></div>Maintenance préventive et corrective</div>
+        <div class="axe-item"><div class="axe-point"></div>Électricité industrielle</div>
+        <div class="axe-item"><div class="axe-point"></div>Automatismes et automates programmables</div>
+        <div class="axe-item"><div class="axe-point"></div>Variateurs de fréquence</div>
+        <div class="axe-item"><div class="axe-point"></div>Chaudières et utilités</div>
+        <div class="axe-item"><div class="axe-point"></div>SMED et TPM</div>
+      </div>
+      <div class="domaine-modalites">
+        <span class="modalite-pill">Intra sur site</span>
+        <span class="modalite-pill">2 à 4 jours</span>
+        <span class="modalite-pill">Travaux pratiques</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- SECTION CATALOGUE -->
+<div class="catalogue-section" id="catalogue">
+  <div class="catalogue-inner">
+    <div>
+      <span class="cat-titre-eyebrow">Catalogue 2026</span>
+      <h2 class="cat-titre">Accédez au catalogue complet</h2>
+      <div class="cat-fil"></div>
+      <p class="cat-sous">Plus de 40 programmes détaillés, organisés par domaine et par niveau. Renseignez vos coordonnées pour consulter le catalogue Helyos 2026 en ligne.</p>
+      <div class="cat-chiffres">
+        <div>
+          <span class="cat-chiffre-val">40+</span>
+          <span class="cat-chiffre-label">Programmes</span>
+        </div>
+        <div>
+          <span class="cat-chiffre-val">9</span>
+          <span class="cat-chiffre-label">Domaines</span>
+        </div>
+        <div>
+          <span class="cat-chiffre-val">5+</span>
+          <span class="cat-chiffre-label">Années d'expérience</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <form class="cat-form" id="cat-form" novalidate>
+        <input type="hidden" name="access_key" value="da6f1082-9c25-45d5-a92a-1b4112f48180" />
+        <input type="hidden" name="subject" value="Demande catalogue Helyos 2026 — page formations" />
+        <input type="hidden" name="from_name" value="Helyos — Demande catalogue" />
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+        <div class="cat-form-row">
+          <div class="cat-champ">
+            <label for="f-prenom">Prénom *</label>
+            <input type="text" id="f-prenom" name="prenom" placeholder="Votre prénom" required />
+          </div>
+          <div class="cat-champ">
+            <label for="f-nom">Nom *</label>
+            <input type="text" id="f-nom" name="nom" placeholder="Votre nom" required />
+          </div>
+        </div>
+        <div class="cat-champ">
+          <label for="f-email">E-mail professionnel *</label>
+          <input type="email" id="f-email" name="email" placeholder="votre@entreprise.com" required />
+        </div>
+        <div class="cat-form-row">
+          <div class="cat-champ">
+            <label for="f-tel">Téléphone *</label>
+            <input type="tel" id="f-tel" name="telephone" placeholder="+216 XX XXX XXX" required />
+          </div>
+          <div class="cat-champ">
+            <label for="f-entreprise">Entreprise *</label>
+            <input type="text" id="f-entreprise" name="entreprise" placeholder="Votre organisation" required />
+          </div>
+        </div>
+        <div class="cat-champ">
+          <label for="f-fonction">Fonction *</label>
+          <input type="text" id="f-fonction" name="fonction" placeholder="Ex. : DRH, Responsable formation..." required />
+        </div>
+        <div class="cat-err" id="cat-err">Merci de renseigner tous les champs obligatoires.</div>
+        <button type="submit" class="btn-cat" id="cat-btn">
+          <span>Consulter le catalogue</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </form>
+      <div class="cat-lien-zone" id="cat-lien-zone">
+        <div class="cat-lien-titre">Votre catalogue est prêt</div>
+        <p class="cat-lien-sous">Cliquez ci-dessous pour consulter le catalogue Helyos 2026 en ligne.</p>
+        <a href="https://canva.link/frmu5i39tdsicx2" target="_blank" rel="noopener" class="btn-voir">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          Voir le catalogue
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="site-footer-logo">
+    <img src="https://helyos.io/logo-helyos.png" alt="Helyos" />
+    <span>Helyos</span>
+  </div>
+  <span class="site-footer-copy">&copy; 2026 Helyos (KAIROSNUNC SARL). Tous droits réservés.</span>
+  <div class="site-footer-liens">
+    <a href="https://helyos.io">Accueil</a>
+    <a href="https://helyos.io/blog/">Blog</a>
+    <a href="https://helyos.io/#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+  /* Reveal */
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  /* Formulaire catalogue */
+  document.getElementById('cat-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const err = document.getElementById('cat-err');
+    const btn = document.getElementById('cat-btn');
+    const vals = ['f-prenom','f-nom','f-email','f-tel','f-entreprise','f-fonction'];
+    const empty = vals.some(id => !document.getElementById(id).value.trim());
+    if (empty) { err.classList.add('visible'); return; }
+    err.classList.remove('visible');
+    btn.disabled = true;
+    btn.querySelector('span').textContent = 'Envoi en cours...';
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(this) });
+      const data = await res.json();
+      if (data.success) {
+        this.style.display = 'none';
+        document.getElementById('cat-lien-zone').classList.add('visible');
+      } else {
+        err.textContent = 'Une erreur est survenue. Veuillez réessayer.';
+        err.classList.add('visible');
+        btn.disabled = false;
+        btn.querySelector('span').textContent = 'Consulter le catalogue';
+      }
+    } catch {
+      err.textContent = 'Erreur de connexion. Veuillez réessayer.';
+      err.classList.add('visible');
+      btn.disabled = false;
+      btn.querySelector('span').textContent = 'Consulter le catalogue';
+    }
+  });
+</script>
+</body>
+</html>
