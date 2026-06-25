@@ -963,6 +963,189 @@
       margin-bottom: 0.7rem;
     }
     @media (max-width: 800px) { .blog-apercu-grille { grid-template-columns: 1fr; } }
+
+    /* ─── Section Catalogue ──────────────────────────────────── */
+    #catalogue { background: var(--encre); }
+    .catalogue-grille {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    @media (max-width: 860px) { .catalogue-grille { grid-template-columns: 1fr; gap: 3rem; } }
+
+    .catalogue-visuel {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .catalogue-cover {
+      width: 100%;
+      max-width: 340px;
+      aspect-ratio: 3/4;
+      background: rgba(200,136,10,0.08);
+      border: 1px solid rgba(200,136,10,0.25);
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      padding: 2.5rem;
+    }
+    .catalogue-cover-logo {
+      width: 72px;
+      height: 72px;
+      opacity: 0.7;
+    }
+    .catalogue-cover-titre {
+      font-family: var(--display);
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--blanc);
+      text-align: center;
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+    }
+    .catalogue-cover-annee {
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--or);
+    }
+    .catalogue-cover-domaines {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.35);
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    /* Formulaire catalogue */
+    #catalogue .section-eyebrow { color: var(--or); }
+    #catalogue .section-titre { color: var(--blanc); }
+    #catalogue .section-intro { color: rgba(255,255,255,0.45); max-width: 440px; }
+    #catalogue .fil { background: var(--or); }
+
+    .catalogue-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      margin-top: 2rem;
+    }
+    .catalogue-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem;
+    }
+    @media (max-width: 500px) { .catalogue-form-row { grid-template-columns: 1fr; } }
+    .catalogue-champ {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .catalogue-champ label {
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      font-weight: 400;
+    }
+    .catalogue-champ input,
+    .catalogue-champ select {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--blanc);
+      font-family: var(--corps);
+      font-size: 0.88rem;
+      font-weight: 300;
+      padding: 0.75rem 1rem;
+      border-radius: 2px;
+      outline: none;
+      transition: border-color 0.2s;
+      appearance: none;
+      width: 100%;
+    }
+    .catalogue-champ input::placeholder { color: rgba(255,255,255,0.2); }
+    .catalogue-champ input:focus,
+    .catalogue-champ select:focus { border-color: var(--or); }
+    .catalogue-champ select option { background: var(--encre); }
+    .catalogue-champ.full { grid-column: 1 / -1; }
+    .btn-catalogue {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.9rem 2.2rem;
+      background: var(--or);
+      color: var(--blanc);
+      font-family: var(--corps);
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.2s;
+      align-self: flex-start;
+      margin-top: 0.4rem;
+    }
+    .btn-catalogue:hover { background: var(--or-light); transform: translateY(-1px); }
+    .btn-catalogue:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+    /* Zone révélation lien */
+    .catalogue-lien-zone {
+      display: none;
+      margin-top: 1.5rem;
+      padding: 1.5rem;
+      background: rgba(200,136,10,0.1);
+      border: 1px solid rgba(200,136,10,0.3);
+      border-radius: 4px;
+      text-align: center;
+    }
+    .catalogue-lien-zone.visible { display: block; animation: fadeIn 0.4s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    .catalogue-lien-titre {
+      font-family: var(--display);
+      font-size: 1.1rem;
+      color: var(--blanc);
+      margin-bottom: 0.6rem;
+    }
+    .catalogue-lien-sous {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 1.2rem;
+    }
+    .btn-voir-catalogue {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.85rem 2rem;
+      background: transparent;
+      color: var(--or);
+      border: 1.5px solid var(--or);
+      border-radius: 2px;
+      font-family: var(--corps);
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-voir-catalogue:hover {
+      background: var(--or);
+      color: var(--blanc);
+    }
+    .catalogue-msg-err {
+      font-size: 0.82rem;
+      color: #cf8f8f;
+      margin-top: 0.5rem;
+      display: none;
+    }
+    .catalogue-msg-err.visible { display: block; }
+
   </style>
 </head>
 <body>
@@ -977,10 +1160,11 @@
 
     <div class="nav-links" id="nav-links">
       <a href="#services">Services</a>
-      <a href="#formation">Formation</a>
+      <a href="/formations/">Formation</a>
       <a href="#methode">Approche</a>
       <a href="#apropos">À propos</a>
       <a href="#clients">Clients</a>
+      <a href="#catalogue">Catalogue</a>
       <a href="/blog/">Blog</a>
       <a href="#contact" class="nav-cta">Nous contacter</a>
     </div>
@@ -1088,32 +1272,32 @@
     </div>
 
     <div class="domaines-grille">
-      <div class="domaine-item reveal reveal-d1">
+      <a href="/formations/#management" style="text-decoration:none;color:inherit;display:block"><div class="domaine-item reveal reveal-d1">
         <svg class="domaine-icone" viewBox="0 0 36 36" fill="none" stroke="#C8880A" stroke-width="1.5" stroke-linecap="round">
           <circle cx="18" cy="12" r="5"/><path d="M6 30c0-6.627 5.373-8 12-8s12 1.373 12 8"/>
         </svg>
         <div class="domaine-nom">Management &amp; Leadership</div>
         <div class="domaine-detail">Management d'équipe, leadership situationnel, coaching managérial, gestion des conflits.</div>
-      </div>
+      </div></a>
 
-      <div class="domaine-item reveal reveal-d2">
+      <a href="/formations/#rh" style="text-decoration:none;color:inherit;display:block"><div class="domaine-item reveal reveal-d2">
         <svg class="domaine-icone" viewBox="0 0 36 36" fill="none" stroke="#C8880A" stroke-width="1.5" stroke-linecap="round">
           <rect x="5" y="5" width="10" height="10" rx="1"/><rect x="21" y="5" width="10" height="10" rx="1"/>
           <rect x="5" y="21" width="10" height="10" rx="1"/><rect x="21" y="21" width="10" height="10" rx="1"/>
         </svg>
         <div class="domaine-nom">Ressources humaines</div>
         <div class="domaine-detail">Recrutement, GPEC, évaluation des performances, droit du travail, paie et administration.</div>
-      </div>
+      </div></a>
 
-      <div class="domaine-item reveal reveal-d3">
+      <a href="/formations/#finance" style="text-decoration:none;color:inherit;display:block"><div class="domaine-item reveal reveal-d3">
         <svg class="domaine-icone" viewBox="0 0 36 36" fill="none" stroke="#C8880A" stroke-width="1.5" stroke-linecap="round">
           <path d="M6 28 L14 18 L20 23 L28 10"/><circle cx="28" cy="10" r="2" fill="#C8880A" stroke="none"/>
         </svg>
         <div class="domaine-nom">Finance &amp; Gestion</div>
         <div class="domaine-detail">Analyse financière, élaboration des états financiers, gestion budgétaire, audit interne.</div>
-      </div>
+      </div></a>
 
-      <div class="domaine-item reveal reveal-d1">
+      <a href="/formations/#vente" style="text-decoration:none;color:inherit;display:block"><div class="domaine-item reveal reveal-d1">
         <svg class="domaine-icone" viewBox="0 0 36 36" fill="none" stroke="#C8880A" stroke-width="1.5" stroke-linecap="round">
           <rect x="6" y="8" width="24" height="20" rx="2"/>
           <path d="M12 8V6a2 2 0 014 0v2M20 8V6a2 2 0 014 0v2"/>
@@ -1121,35 +1305,35 @@
         </svg>
         <div class="domaine-nom">Vente &amp; Relation client</div>
         <div class="domaine-detail">Techniques de vente, négociation commerciale, accueil client, efficacité commerciale.</div>
-      </div>
+      </div></a>
 
-      <div class="domaine-item reveal reveal-d2">
+      <a href="/formations/#hse" style="text-decoration:none;color:inherit;display:block"><div class="domaine-item reveal reveal-d2">
         <svg class="domaine-icone" viewBox="0 0 36 36" fill="none" stroke="#C8880A" stroke-width="1.5" stroke-linecap="round">
           <circle cx="18" cy="18" r="12"/>
           <path d="M12 18h12M18 12v12"/>
         </svg>
         <div class="domaine-nom">Hygiène, sécurité &amp; environnement</div>
         <div class="domaine-detail">Secourisme, habilitation des caristes, travail par point chaud, bilan carbone, SMED, 5S.</div>
-      </div>
+      </div></a>
 
-      <div class="domaine-item reveal reveal-d3">
+      <a href="/formations/#digital" style="text-decoration:none;color:inherit;display:block"><div class="domaine-item reveal reveal-d3">
         <svg class="domaine-icone" viewBox="0 0 36 36" fill="none" stroke="#C8880A" stroke-width="1.5" stroke-linecap="round">
           <polyline points="6,24 14,14 20,19 28,6"/>
           <rect x="4" y="26" width="28" height="4" rx="1"/>
         </svg>
         <div class="domaine-nom">Technologies &amp; Digital</div>
         <div class="domaine-detail">Bureautique avancée, Excel, logiciels métier, transformation numérique, outils digitaux RH.</div>
-      </div>
+      </div></a>
 
-      <div class="domaine-item reveal reveal-d1">
+      <a href="/formations/#logistique" style="text-decoration:none;color:inherit;display:block"><div class="domaine-item reveal reveal-d1">
         <svg class="domaine-icone" viewBox="0 0 36 36" fill="none" stroke="#C8880A" stroke-width="1.5" stroke-linecap="round">
           <path d="M10 8h16v4H10z"/><path d="M6 16h24v4H6z"/><path d="M10 24h16v4H10z"/>
         </svg>
         <div class="domaine-nom">Logistique &amp; Transport</div>
         <div class="domaine-detail">Gestion des stocks, logistique opérationnelle, audit logistique, optimisation des flux.</div>
-      </div>
+      </div></a>
 
-      <div class="domaine-item reveal reveal-d2">
+      <a href="/formations/#maintenance" style="text-decoration:none;color:inherit;display:block"><div class="domaine-item reveal reveal-d2">
         <svg class="domaine-icone" viewBox="0 0 36 36" fill="none" stroke="#C8880A" stroke-width="1.5" stroke-linecap="round">
           <circle cx="18" cy="18" r="5"/>
           <path d="M18 4v4M18 28v4M4 18h4M28 18h4"/>
@@ -1157,16 +1341,16 @@
         </svg>
         <div class="domaine-nom">Maintenance industrielle</div>
         <div class="domaine-detail">Maintenance préventive, automatismes, électricité industrielle, variateurs de fréquence, chaudières.</div>
-      </div>
+      </div></a>
 
-      <div class="domaine-item reveal reveal-d3">
+      <a href="/formations/#softskills" style="text-decoration:none;color:inherit;display:block"><div class="domaine-item reveal reveal-d3">
         <svg class="domaine-icone" viewBox="0 0 36 36" fill="none" stroke="#C8880A" stroke-width="1.5" stroke-linecap="round">
           <path d="M8 28V16l10-8 10 8v12"/>
           <rect x="14" y="20" width="8" height="8"/>
         </svg>
         <div class="domaine-nom">Soft skills &amp; Développement personnel</div>
         <div class="domaine-detail">Gestion du stress, communication, prise de parole, intelligence émotionnelle, team building.</div>
-      </div>
+      </div></a>
     </div>
 
     <div style="margin-top:2.5rem;" class="reveal">
@@ -1291,6 +1475,20 @@
         <p class="membre-bio">Plus de 10 ans d'expérience dans la gestion d'unités de formation et de conseil RH. Spécialiste du développement des organisations et de la conception pédagogique sur mesure.</p>
       </div>
     </div>
+  </div>
+</section>
+
+
+
+
+<!-- ─── Catalogue ───────────────────────────────────────────── -->
+<section id="catalogue" style="background:var(--fond-alt);padding:3rem 2rem;text-align:center">
+  <div class="section-inner" style="max-width:700px">
+    <span class="section-eyebrow">Catalogue 2026</span>
+    <h2 class="section-titre" style="margin-bottom:0.8rem">40+ programmes de formation</h2>
+    <div class="fil" style="margin:1rem auto"></div>
+    <p class="section-intro" style="margin:0 auto 2rem">Management, RH, soft skills, digital, finance et plus encore. Consultez notre catalogue complet pour découvrir nos programmes en détail.</p>
+    <a href="/formations/" class="btn-primaire">Découvrir nos programmes</a>
   </div>
 </section>
 
@@ -1477,7 +1675,7 @@
     <span class="footer-copy">&copy; 2026 Helyos (KAIROSNUNC SARL). Tous droits réservés.</span>
     <div class="footer-liens">
       <a href="#services">Services</a>
-      <a href="#formation">Formation</a>
+      <a href="/formations/">Formation</a>
       <a href="#contact">Contact</a>
       <button class="footer-lien-legal" onclick="ouvrirModal('modal-mentions')">Mentions légales</button>
       <button class="footer-lien-legal" onclick="ouvrirModal('modal-confidentialite')">Confidentialité</button>
@@ -1661,6 +1859,51 @@
     }
     btn.disabled = false;
     btn.textContent = 'Envoyer';
+  });
+
+
+  /* ── Formulaire catalogue ── */
+  document.getElementById('catalogue-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const err = document.getElementById('cat-err');
+    const btn = document.getElementById('cat-btn');
+    const prenom   = document.getElementById('cat-prenom').value.trim();
+    const nom      = document.getElementById('cat-nom').value.trim();
+    const email    = document.getElementById('cat-email').value.trim();
+    const tel      = document.getElementById('cat-tel').value.trim();
+    const entreprise = document.getElementById('cat-entreprise').value.trim();
+    const fonction = document.getElementById('cat-fonction').value.trim();
+
+    if (!prenom || !nom || !email || !tel || !entreprise || !fonction) {
+      err.classList.add('visible');
+      return;
+    }
+    err.classList.remove('visible');
+    btn.disabled = true;
+    btn.querySelector('span').textContent = 'Envoi en cours...';
+
+    try {
+      const formData = new FormData(this);
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+      const data = await response.json();
+      if (data.success) {
+        this.style.display = 'none';
+        document.getElementById('cat-lien-zone').classList.add('visible');
+      } else {
+        err.textContent = 'Une erreur est survenue. Veuillez réessayer.';
+        err.classList.add('visible');
+        btn.disabled = false;
+        btn.querySelector('span').textContent = 'Consulter le catalogue';
+      }
+    } catch (e) {
+      err.textContent = 'Erreur de connexion. Veuillez réessayer.';
+      err.classList.add('visible');
+      btn.disabled = false;
+      btn.querySelector('span').textContent = 'Consulter le catalogue';
+    }
   });
 
   /* Modales légales */
