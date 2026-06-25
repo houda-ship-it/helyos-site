@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Expertise RH, Formation & Management | Helyos</title>
+  <meta name="description" content="Le blog d'Helyos : analyses, décryptages et points de vue sur la formation professionnelle, les ressources humaines et le management en Tunisie et dans la région MENA." />
+  <link rel="canonical" href="https://helyos.io/blog/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --or:      #C8880A;
+      --fond:    #FAFAF8;
+      --fond-alt:#F3F2ED;
+      --encre:   #2C2C2C;
+      --gris:    #767676;
+      --gris-fin:#D8D6CF;
+      --blanc:   #FFFFFF;
+      --display: 'Cormorant Garamond', Georgia, serif;
+      --corps:   'Inter', system-ui, sans-serif;
+      --max:     1100px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; }
+    body { background: var(--fond); color: var(--encre); font-family: var(--corps); font-weight: 300; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+
+    /* HEADER */
+    .site-header {
+      background: var(--blanc);
+      border-bottom: 1px solid var(--gris-fin);
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .site-logo { display: flex; align-items: center; gap: 0.7rem; }
+    .site-logo svg { width: 28px; height: 28px; }
+    .site-logo span {
+      font-family: var(--display);
+      font-size: 1.15rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--encre);
+    }
+    .header-nav { display: flex; align-items: center; gap: 1.8rem; }
+    .header-nav a {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gris);
+      transition: color 0.2s;
+    }
+    .header-nav a:hover, .header-nav a.active { color: var(--or); }
+
+    /* HERO BLOG */
+    .blog-hero {
+      background: var(--fond-alt);
+      border-bottom: 1px solid var(--gris-fin);
+      padding: 4rem 2rem 3.5rem;
+      text-align: center;
+    }
+    .blog-hero-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .blog-hero-titre {
+      font-family: var(--display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      color: var(--encre);
+      margin-bottom: 1rem;
+      line-height: 1.15;
+    }
+    .blog-hero-sous {
+      font-size: 0.95rem;
+      color: var(--gris);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    /* FILTRES */
+    .blog-filtres {
+      max-width: var(--max);
+      margin: 2.5rem auto 0;
+      padding: 0 2rem;
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .filtre-btn {
+      padding: 0.4rem 1rem;
+      border-radius: 2px;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid var(--gris-fin);
+      background: var(--blanc);
+      color: var(--gris);
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: var(--corps);
+    }
+    .filtre-btn:hover, .filtre-btn.actif {
+      background: var(--or);
+      border-color: var(--or);
+      color: var(--blanc);
+    }
+
+    /* GRILLE ARTICLES */
+    .blog-grille {
+      max-width: var(--max);
+      margin: 3rem auto 0;
+      padding: 0 2rem 6rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    @media (max-width: 900px) { .blog-grille { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 580px) { .blog-grille { grid-template-columns: 1fr; } }
+
+    /* CARD ARTICLE */
+    .card-article {
+      background: var(--blanc);
+      display: flex;
+      flex-direction: column;
+      transition: background 0.2s;
+      position: relative;
+    }
+    .card-article::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--or);
+      transition: width 0.35s ease;
+    }
+    .card-article:hover { background: #FFFDF7; }
+    .card-article:hover::after { width: 100%; }
+    .card-article a { display: flex; flex-direction: column; height: 100%; padding: 2.2rem; }
+
+    .card-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: 1rem;
+    }
+    .card-titre {
+      font-family: var(--display);
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--encre);
+      line-height: 1.25;
+      margin-bottom: 0.9rem;
+      flex: 1;
+    }
+    .card-extrait {
+      font-size: 0.84rem;
+      color: var(--gris);
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1rem;
+      border-top: 1px solid var(--gris-fin);
+      margin-top: auto;
+    }
+    .card-date { font-size: 0.75rem; color: var(--gris); }
+    .card-temps { font-size: 0.75rem; color: var(--gris); }
+    .card-lire {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--or);
+    }
+
+    /* CARD FEATURED (première, plus grande) */
+    .card-article.featured {
+      grid-column: 1 / -1;
+    }
+    .card-article.featured a {
+      flex-direction: row;
+      gap: 3rem;
+      align-items: flex-start;
+      padding: 2.8rem 3rem;
+    }
+    .featured-left { flex: 1; }
+    .featured-right {
+      width: 340px;
+      flex-shrink: 0;
+      border-left: 1px solid var(--gris-fin);
+      padding-left: 3rem;
+    }
+    .featured-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: 0.5rem;
+    }
+    .featured-titre {
+      font-family: var(--display);
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 400;
+      color: var(--encre);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .featured-extrait {
+      font-size: 0.9rem;
+      color: var(--gris);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+    .featured-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--gris-fin);
+    }
+    .featured-date { font-size: 0.75rem; color: var(--gris); }
+    .featured-cta {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--or);
+      border-bottom: 1px solid var(--or);
+      padding-bottom: 1px;
+    }
+    .featured-points { list-style: none; }
+    .featured-points li {
+      font-size: 0.85rem;
+      color: var(--gris);
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--gris-fin);
+      padding-left: 1rem;
+      position: relative;
+    }
+    .featured-points li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0.9em;
+      width: 4px; height: 1px;
+      background: var(--or);
+    }
+    .featured-points li:last-child { border-bottom: none; }
+
+    @media (max-width: 800px) {
+      .card-article.featured a { flex-direction: column; }
+      .featured-right { width: 100%; border-left: none; padding-left: 0; border-top: 1px solid var(--gris-fin); padding-top: 1.5rem; }
+    }
+
+    /* À VENIR */
+    .card-article.a-venir {
+      opacity: 0.55;
+      pointer-events: none;
+    }
+    .card-a-venir-badge {
+      display: inline-block;
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background: var(--fond-alt);
+      color: var(--gris);
+      border: 1px solid var(--gris-fin);
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+      margin-bottom: 0.8rem;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background: #1E1E1E;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .site-footer-logo { display: flex; align-items: center; gap: 0.6rem; }
+    .site-footer-logo span {
+      font-family: var(--display);
+      font-size: 1rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+    }
+    .site-footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.25); }
+    .site-footer-liens { display: flex; gap: 1.5rem; }
+    .site-footer-liens a {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .site-footer-liens a:hover { color: var(--or); }
+
+    @media (max-width: 600px) { .header-nav { display: none; } }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="https://helyos.io" class="site-logo">
+    <svg viewBox="0 0 100 100" fill="none">
+      <circle cx="50" cy="50" r="46" stroke="#C8880A" stroke-width="2"/>
+      <circle cx="50" cy="50" r="18" stroke="#C8880A" stroke-width="1.5"/>
+      <line x1="50" y1="4" x2="50" y2="28" stroke="#C8880A" stroke-width="1.5"/>
+      <line x1="50" y1="72" x2="50" y2="96" stroke="#C8880A" stroke-width="1.5"/>
+      <line x1="4" y1="50" x2="28" y2="50" stroke="#C8880A" stroke-width="1.5"/>
+      <line x1="72" y1="50" x2="96" y2="50" stroke="#C8880A" stroke-width="1.5"/>
+      <line x1="17" y1="17" x2="35" y2="35" stroke="#C8880A" stroke-width="1.5"/>
+      <line x1="65" y1="65" x2="83" y2="83" stroke="#C8880A" stroke-width="1.5"/>
+      <line x1="83" y1="17" x2="65" y2="35" stroke="#C8880A" stroke-width="1.5"/>
+      <line x1="35" y1="65" x2="17" y2="83" stroke="#C8880A" stroke-width="1.5"/>
+      <ellipse cx="44" cy="47" rx="2" ry="2.5" fill="#C8880A"/>
+      <ellipse cx="56" cy="47" rx="2" ry="2.5" fill="#C8880A"/>
+      <path d="M44 55 Q50 59 56 55" stroke="#C8880A" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+    </svg>
+    <span>Helyos</span>
+  </a>
+  <nav class="header-nav">
+    <a href="https://helyos.io/#services">Services</a>
+    <a href="https://helyos.io/#formation">Formation</a>
+    <a href="https://helyos.io/blog/" class="active">Blog</a>
+    <a href="https://helyos.io/#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="blog-hero">
+  <span class="blog-hero-eyebrow">Expertise & Analyses</span>
+  <h1 class="blog-hero-titre">Le blog Helyos</h1>
+  <p class="blog-hero-sous">Formation professionnelle, ressources humaines, management et transformation digitale — nos points de vue sur les enjeux qui redéfinissent le monde du travail en Tunisie et dans la région MENA.</p>
+</div>
+
+<div class="blog-filtres">
+  <button class="filtre-btn actif">Tous</button>
+  <button class="filtre-btn">Réglementation</button>
+  <button class="filtre-btn">Formation</button>
+  <button class="filtre-btn">Management</button>
+  <button class="filtre-btn">RH</button>
+  <button class="filtre-btn">Digital</button>
+</div>
+
+<div class="blog-grille">
+
+  <!-- Article À LA UNE : RNCCFP -->
+  <div class="card-article featured">
+    <a href="rnccfp-repertoire-national-competences-certifications-formation-professionnelle-tunisie.html">
+      <div class="featured-left">
+        <div class="featured-label">À la une · Réglementation</div>
+        <h2 class="featured-titre">RNCCFP : ce que le nouveau répertoire national des compétences va changer pour la formation professionnelle en Tunisie</h2>
+        <p class="featured-extrait">Lancé officiellement le 2 juin 2026 par le ministère de l'Emploi, le Répertoire national des compétences et des certifications de la formation professionnelle va restructurer les 574 spécialités du système tunisien d'ici 2029. Décryptage des enjeux pour les entreprises et les organismes de formation.</p>
+        <div class="featured-meta">
+          <span class="featured-date">10 juin 2026 · 7 min</span>
+          <span class="featured-cta">Lire l'article</span>
+        </div>
+      </div>
+      <div class="featured-right">
+        <div class="featured-label">Points clés</div>
+        <ul class="featured-points">
+          <li>574 spécialités de formation à harmoniser</li>
+          <li>22,5 millions d'euros de financement UE + Allemagne</li>
+          <li>Plateforme numérique nationale prévue</li>
+          <li>Alignement sur les référentiels africains et européens</li>
+          <li>Opérationnel au plus tard en 2029</li>
+        </ul>
+      </div>
+    </a>
+  </div>
+
+  <!-- Article 2 : À venir -->
+  <div class="card-article a-venir">
+    <div style="padding:2.2rem;display:flex;flex-direction:column;height:100%">
+      <span class="card-a-venir-badge">Prochainement</span>
+      <span class="card-tag">Formation</span>
+      <h2 class="card-titre">Pourquoi la pédagogie active change réellement les résultats de formation</h2>
+      <p class="card-extrait">Exposé magistral ou mise en situation, cas pratiques ou jeux de rôles : ce que la recherche en sciences de l'apprentissage dit réellement sur les méthodes qui produisent des compétences durables.</p>
+      <div class="card-meta">
+        <span class="card-date">Juillet 2026</span>
+        <span class="card-temps">6 min</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Article 3 : À venir -->
+  <div class="card-article a-venir">
+    <div style="padding:2.2rem;display:flex;flex-direction:column;height:100%">
+      <span class="card-a-venir-badge">Prochainement</span>
+      <span class="card-tag">Management</span>
+      <h2 class="card-titre">Génération Z et engagement au travail : ce que les managers tunisiens doivent comprendre</h2>
+      <p class="card-extrait">La génération Z est désormais majoritaire dans les recrutements. Ses attentes vis-à-vis du travail, du management et du sens diffèrent profondément de celles de ses aînés. Comment les entreprises tunisiennes s'y adaptent-elles réellement ?</p>
+      <div class="card-meta">
+        <span class="card-date">Juillet 2026</span>
+        <span class="card-temps">8 min</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer-logo">
+    <svg width="24" height="24" viewBox="0 0 100 100" fill="none">
+      <circle cx="50" cy="50" r="46" stroke="#C8880A" stroke-width="2"/>
+      <circle cx="50" cy="50" r="18" stroke="#C8880A" stroke-width="1.5"/>
+      <ellipse cx="44" cy="47" rx="2" ry="2.5" fill="#C8880A"/>
+      <ellipse cx="56" cy="47" rx="2" ry="2.5" fill="#C8880A"/>
+      <path d="M44 55 Q50 59 56 55" stroke="#C8880A" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+    </svg>
+    <span>Helyos</span>
+  </div>
+  <span class="site-footer-copy">&copy; 2026 Helyos (KAIROSNUNC SARL). Tous droits réservés.</span>
+  <div class="site-footer-liens">
+    <a href="https://helyos.io">Accueil</a>
+    <a href="https://helyos.io/#contact">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>

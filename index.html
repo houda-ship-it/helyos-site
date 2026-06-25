@@ -732,6 +732,262 @@
       .hero-bg svg { animation: none; }
       .hero-scroll-line { animation: none; }
     }
+
+    /* ─── Vision ─────────────────────────────────────────────── */
+    .vision-bloc {
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      border-top: 1px solid var(--gris-fin);
+      border-bottom: 1px solid var(--gris-fin);
+    }
+    .vision-phrase {
+      font-family: var(--display);
+      font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.35;
+      color: var(--encre);
+      margin-top: 1.2rem;
+      letter-spacing: 0.01em;
+    }
+    .vision-phrase::before { content: '\201C'; color: var(--or); margin-right: 0.1em; }
+    .vision-phrase::after  { content: '\201D'; color: var(--or); margin-left: 0.1em; }
+
+    /* ─── Valeurs ────────────────────────────────────────────── */
+    .valeurs-grille {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .valeur-carte {
+      padding: 2.8rem 2.4rem;
+      background: var(--blanc);
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+    .valeur-carte::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--or);
+      transition: width 0.4s ease;
+    }
+    .valeur-carte:hover::after { width: 100%; }
+    .valeur-carte:hover { background: #FFFDF7; }
+    .valeur-mot {
+      font-family: var(--display);
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--or);
+      margin-bottom: 1.2rem;
+      line-height: 1;
+    }
+    .valeur-texte {
+      font-size: 0.9rem;
+      color: var(--gris);
+      line-height: 1.85;
+    }
+    @media (max-width: 800px) {
+      .valeurs-grille { grid-template-columns: 1fr; }
+    }
+
+    /* ─── Bouton légal footer ────────────────────────────────── */
+    .footer-lien-legal {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--corps);
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0;
+      transition: color 0.2s;
+    }
+    .footer-lien-legal:hover { color: var(--or); }
+
+    /* ─── Modales légales ────────────────────────────────────── */
+    .modal-legal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(44,44,44,0.6);
+      z-index: 500;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 4rem 1.5rem 2rem;
+      overflow-y: auto;
+    }
+    .modal-legal.ouverte { display: flex; }
+    .modal-legal-boite {
+      background: var(--blanc);
+      border-radius: 4px;
+      padding: 3rem 3.5rem;
+      max-width: 720px;
+      width: 100%;
+      position: relative;
+      animation: fadeUp 0.25s ease;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: none; }
+    }
+    .modal-legal-fermer {
+      position: absolute;
+      top: 1.2rem; right: 1.5rem;
+      background: none; border: none;
+      font-size: 1.6rem; color: var(--gris);
+      cursor: pointer; line-height: 1;
+      transition: color 0.2s;
+    }
+    .modal-legal-fermer:hover { color: var(--encre); }
+    .modal-legal-titre {
+      font-family: var(--display);
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--or);
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--gris-fin);
+    }
+    .legal-section {
+      margin-bottom: 1.8rem;
+    }
+    .legal-section h3 {
+      font-family: var(--corps);
+      font-size: 0.72rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--gris);
+      margin-bottom: 0.7rem;
+    }
+    .legal-section p {
+      font-size: 0.9rem;
+      color: var(--encre);
+      line-height: 1.75;
+      margin-bottom: 0.4rem;
+    }
+    .legal-section a { color: var(--or); }
+    .legal-section a:hover { text-decoration: underline; }
+    .legal-liste {
+      list-style: none;
+      padding: 0.3rem 0 0.6rem 0;
+    }
+    .legal-liste li {
+      font-size: 0.9rem;
+      color: var(--encre);
+      line-height: 1.75;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .legal-liste li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0.7em;
+      width: 4px; height: 1px;
+      background: var(--or);
+    }
+    .legal-date {
+      font-size: 0.78rem;
+      color: var(--gris);
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--gris-fin);
+    }
+    @media (max-width: 600px) {
+      .modal-legal { padding: 2rem 1rem; }
+      .modal-legal-boite { padding: 2rem 1.5rem; }
+    }
+
+    /* ─── Section Blog ───────────────────────────────────────── */
+    .blog-apercu-grille {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 0;
+    }
+    .blog-card {
+      background: var(--blanc);
+      padding: 2rem 2rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: background 0.2s;
+    }
+    .blog-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--or);
+      transition: width 0.35s ease;
+    }
+    .blog-card:hover { background: #FFFDF7; }
+    .blog-card:hover::after { width: 100%; }
+    .blog-card-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+    .blog-card-titre {
+      font-family: var(--display);
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--encre);
+      line-height: 1.25;
+      margin-bottom: 0.7rem;
+      flex: 1;
+      text-decoration: none;
+    }
+    .blog-card-titre:hover { color: var(--or); }
+    .blog-card-extrait {
+      font-size: 0.83rem;
+      color: var(--gris);
+      line-height: 1.75;
+      margin-bottom: 1.2rem;
+    }
+    .blog-card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 0.9rem;
+      border-top: 1px solid var(--gris-fin);
+      margin-top: auto;
+    }
+    .blog-card-date { font-size: 0.73rem; color: var(--gris); }
+    .blog-card-lire {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--or);
+      text-decoration: none;
+    }
+    .blog-card-lire:hover { text-decoration: underline; }
+    .blog-card-bientot {
+      opacity: 0.45;
+      pointer-events: none;
+    }
+    .blog-card-badge {
+      display: inline-block;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background: var(--fond-alt);
+      color: var(--gris);
+      border: 1px solid var(--gris-fin);
+      padding: 0.2rem 0.5rem;
+      border-radius: 2px;
+      margin-bottom: 0.7rem;
+    }
+    @media (max-width: 800px) { .blog-apercu-grille { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -740,33 +996,7 @@
 <nav id="nav">
   <div class="nav-inner">
     <a href="#accueil" class="nav-logo">
-      <!-- Logo SVG soleil inline (extrait du logo Helyos) -->
-      <svg width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="46" stroke="#C8880A" stroke-width="2"/>
-        <circle cx="50" cy="50" r="18" stroke="#C8880A" stroke-width="1.5"/>
-        <!-- Rayons principaux -->
-        <line x1="50" y1="4" x2="50" y2="28" stroke="#C8880A" stroke-width="1.5"/>
-        <line x1="50" y1="72" x2="50" y2="96" stroke="#C8880A" stroke-width="1.5"/>
-        <line x1="4" y1="50" x2="28" y2="50" stroke="#C8880A" stroke-width="1.5"/>
-        <line x1="72" y1="50" x2="96" y2="50" stroke="#C8880A" stroke-width="1.5"/>
-        <line x1="17" y1="17" x2="35" y2="35" stroke="#C8880A" stroke-width="1.5"/>
-        <line x1="65" y1="65" x2="83" y2="83" stroke="#C8880A" stroke-width="1.5"/>
-        <line x1="83" y1="17" x2="65" y2="35" stroke="#C8880A" stroke-width="1.5"/>
-        <line x1="35" y1="65" x2="17" y2="83" stroke="#C8880A" stroke-width="1.5"/>
-        <!-- Rayons secondaires -->
-        <line x1="29" y1="7"  x2="35" y2="30" stroke="#C8880A" stroke-width="1"/>
-        <line x1="71" y1="7"  x2="65" y2="30" stroke="#C8880A" stroke-width="1"/>
-        <line x1="93" y1="29" x2="70" y2="35" stroke="#C8880A" stroke-width="1"/>
-        <line x1="93" y1="71" x2="70" y2="65" stroke="#C8880A" stroke-width="1"/>
-        <line x1="71" y1="93" x2="65" y2="70" stroke="#C8880A" stroke-width="1"/>
-        <line x1="29" y1="93" x2="35" y2="70" stroke="#C8880A" stroke-width="1"/>
-        <line x1="7"  y1="71" x2="30" y2="65" stroke="#C8880A" stroke-width="1"/>
-        <line x1="7"  y1="29" x2="30" y2="35" stroke="#C8880A" stroke-width="1"/>
-        <!-- Visage simplifié -->
-        <ellipse cx="44" cy="47" rx="2" ry="2.5" fill="#C8880A"/>
-        <ellipse cx="56" cy="47" rx="2" ry="2.5" fill="#C8880A"/>
-        <path d="M44 55 Q50 59 56 55" stroke="#C8880A" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-      </svg>
+      <img src="logo-helyos.png" alt="Helyos" width="36" height="36" />
       <span>Helyos</span>
     </a>
 
@@ -776,6 +1006,7 @@
       <a href="#methode">Approche</a>
       <a href="#apropos">À propos</a>
       <a href="#clients">Clients</a>
+      <a href="/blog/">Blog</a>
       <a href="#contact" class="nav-cta">Nous contacter</a>
     </div>
 
@@ -1032,14 +1263,23 @@
 <!-- ─── À propos ──────────────────────────────────────────────── -->
 <section id="apropos">
   <div class="section-inner">
-    <div class="apropos-grille">
+
+    <!-- Vision -->
+    <div class="vision-bloc reveal">
+      <span class="section-eyebrow">Notre vision</span>
+      <blockquote class="vision-phrase">
+        Faire de la formation un levier de transformation durable, pour les individus, pour les organisations.
+      </blockquote>
+    </div>
+
+    <!-- Texte + chiffres -->
+    <div class="apropos-grille" style="margin-top:4rem;">
       <div class="apropos-texte reveal">
         <span class="section-eyebrow">À propos d'Helyos</span>
         <h2 class="section-titre">Un cabinet à taille humaine, une expertise de fond</h2>
         <div class="fil"></div>
-        <p>Helyos est un cabinet de conseil et de formation fondé à Tunis, spécialisé dans le développement du capital humain des entreprises. Nous intervenons auprès d'organisations de toutes tailles, en Tunisie et dans la région MENA.</p>
-        <p>Notre approche associe rigueur analytique et proximité avec les équipes. Nous croyons que les transformations durables naissent d'un diagnostic honnête et d'un accompagnement ancré dans la réalité du terrain.</p>
-        <p>Notre équipe réunit des profils complémentaires&nbsp;: consultants RH seniors, formateurs certifiés, spécialistes sectoriels&nbsp;: tous engagés dans la transmission et l'impact opérationnel.</p>
+        <p>Helyos est un cabinet de conseil et de formation fondé à Tunis en 2020, spécialisé dans le développement du capital humain des entreprises. Nous intervenons auprès d'organisations de toutes tailles, en Tunisie et dans la région MENA.</p>
+        <p>Notre approche associe rigueur analytique et proximité avec les équipes. Chaque collaboration est une opportunité d'échanger, d'apprendre et de construire ensemble des solutions durables.</p>
         <div style="margin-top:2rem;">
           <a href="#contact" class="btn-primaire">Travailler avec nous</a>
         </div>
@@ -1065,6 +1305,28 @@
       </div>
     </div>
 
+    <!-- Valeurs -->
+    <div style="margin-top:5rem;" class="reveal">
+      <span class="section-eyebrow">Ce qui nous gouverne</span>
+      <h3 class="section-titre" style="font-size:1.8rem;">Nos valeurs</h3>
+      <div class="fil"></div>
+    </div>
+
+    <div class="valeurs-grille" style="margin-top:2.5rem;">
+      <div class="valeur-carte reveal reveal-d1">
+        <div class="valeur-mot">Intégrité</div>
+        <p class="valeur-texte">Nous disons ce que nous faisons, et nous faisons ce que nous disons. Nos recommandations n'ont de valeur que si elles sont honnêtes&nbsp;&mdash; même quand elles dérangent.</p>
+      </div>
+      <div class="valeur-carte reveal reveal-d2">
+        <div class="valeur-mot">Exigence</div>
+        <p class="valeur-texte">Chaque intervention est préparée, structurée et évaluée. Nous refusons l'approximation, que ce soit dans la conception d'un programme, le choix d'un formateur ou la mesure des résultats.</p>
+      </div>
+      <div class="valeur-carte reveal reveal-d3">
+        <div class="valeur-mot">Transmission</div>
+        <p class="valeur-texte">Nous ne livrons pas des contenus, nous accompagnons des personnes. Ce qui compte pour nous, c'est ce qui reste après la formation&nbsp;: une compétence nouvelle, une posture différente, une capacité augmentée.</p>
+      </div>
+    </div>
+
     <!-- Équipe -->
     <div style="margin-top:5rem;" class="reveal">
       <span class="section-eyebrow">L'équipe</span>
@@ -1078,12 +1340,57 @@
         <div class="membre-role">Directrice générale</div>
         <p class="membre-bio">Plus de 10 ans d'expérience dans la gestion d'unités de formation et de conseil RH. Spécialiste du développement des organisations et de la conception pédagogique sur mesure.</p>
       </div>
-      <div class="membre-carte reveal reveal-d2">
-        <div class="membre-initiales"><span>SB</span></div>
-        <div class="membre-nom">Sami Ben Mansour</div>
-        <div class="membre-role">Associé — Conseil &amp; Formation</div>
-        <p class="membre-bio">Consultant RH senior, formateur international et chercheur en sciences du management. Certifié SHRM-CP et CRHA, plus de 25 ans d'expérience en Tunisie, MENA et Europe.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── Blog ─────────────────────────────────────────────────── -->
+<section id="blog">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Expertise & Analyses</span>
+      <h2 class="section-titre">Le blog Helyos</h2>
+      <div class="fil"></div>
+      <p class="section-intro">Formation professionnelle, ressources humaines et management — nos analyses sur les enjeux qui redéfinissent le monde du travail en Tunisie et dans la région MENA.</p>
+    </div>
+
+    <div class="blog-apercu-grille">
+
+      <div class="blog-card reveal reveal-d1">
+        <span class="blog-card-tag">Réglementation</span>
+        <a href="/blog/rnccfp-repertoire-national-competences-certifications-formation-professionnelle-tunisie.html" class="blog-card-titre">RNCCFP : ce que le nouveau répertoire national des compétences va changer pour la formation professionnelle en Tunisie</a>
+        <p class="blog-card-extrait">Lancé le 2 juin 2026, le RNCCFP va restructurer les 574 spécialités du système tunisien de formation professionnelle d'ici 2029. Ce que cela change pour les entreprises.</p>
+        <div class="blog-card-meta">
+          <span class="blog-card-date">10 juin 2026 · 7 min</span>
+          <a href="/blog/rnccfp-repertoire-national-competences-certifications-formation-professionnelle-tunisie.html" class="blog-card-lire">Lire →</a>
+        </div>
       </div>
+
+      <div class="blog-card blog-card-bientot reveal reveal-d2">
+        <span class="blog-card-badge">Prochainement</span>
+        <span class="blog-card-tag">Formation</span>
+        <span class="blog-card-titre">Pourquoi la pédagogie active change réellement les résultats de formation</span>
+        <p class="blog-card-extrait">Ce que la recherche en sciences de l'apprentissage dit réellement sur les méthodes qui produisent des compétences durables.</p>
+        <div class="blog-card-meta">
+          <span class="blog-card-date">Juillet 2026</span>
+        </div>
+      </div>
+
+      <div class="blog-card blog-card-bientot reveal reveal-d3">
+        <span class="blog-card-badge">Prochainement</span>
+        <span class="blog-card-tag">Management</span>
+        <span class="blog-card-titre">Génération Z et engagement au travail : ce que les managers tunisiens doivent comprendre</span>
+        <p class="blog-card-extrait">La génération Z est désormais majoritaire dans les recrutements. Ses attentes diffèrent profondément de celles de ses aînés.</p>
+        <div class="blog-card-meta">
+          <span class="blog-card-date">Juillet 2026</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:2.5rem;" class="reveal">
+      <a href="/blog/" class="btn-secondaire">Voir tous les articles</a>
     </div>
   </div>
 </section>
@@ -1160,7 +1467,7 @@
           </div>
           <div>
             <div class="contact-label">Téléphone</div>
-            <div class="contact-val"><a href="tel:+21600000000">Sur demande</a></div>
+            <div class="contact-val"><a href="tel:+21622605587">+216 22 605 587</a></div>
           </div>
         </div>
       </div>
@@ -1210,27 +1517,127 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">
-      <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="50" cy="50" r="46" stroke="#C8880A" stroke-width="2"/>
-        <circle cx="50" cy="50" r="18" stroke="#C8880A" stroke-width="1.5"/>
-        <line x1="50" y1="4" x2="50" y2="28" stroke="#C8880A" stroke-width="1.5"/>
-        <line x1="50" y1="72" x2="50" y2="96" stroke="#C8880A" stroke-width="1.5"/>
-        <line x1="4" y1="50" x2="28" y2="50" stroke="#C8880A" stroke-width="1.5"/>
-        <line x1="72" y1="50" x2="96" y2="50" stroke="#C8880A" stroke-width="1.5"/>
-        <ellipse cx="44" cy="47" rx="2" ry="2.5" fill="#C8880A"/>
-        <ellipse cx="56" cy="47" rx="2" ry="2.5" fill="#C8880A"/>
-        <path d="M44 55 Q50 59 56 55" stroke="#C8880A" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-      </svg>
+      <img src="logo-helyos.png" alt="Helyos" width="28" height="28" style="object-fit:contain" />
       <span>Helyos</span>
     </div>
-    <span class="footer-copy">&copy; 2025 Helyos. Tous droits réservés.</span>
+    <span class="footer-copy">&copy; 2026 Helyos (KAIROSNUNC SARL). Tous droits réservés.</span>
     <div class="footer-liens">
       <a href="#services">Services</a>
       <a href="#formation">Formation</a>
       <a href="#contact">Contact</a>
+      <button class="footer-lien-legal" onclick="ouvrirModal('modal-mentions')">Mentions légales</button>
+      <button class="footer-lien-legal" onclick="ouvrirModal('modal-confidentialite')">Confidentialité</button>
     </div>
   </div>
 </footer>
+
+
+<!-- ─── Modale Mentions légales ───────────────────────────────── -->
+<div class="modal-legal" id="modal-mentions" role="dialog" aria-modal="true" aria-labelledby="titre-mentions">
+  <div class="modal-legal-boite">
+    <button class="modal-legal-fermer" onclick="fermerModal('modal-mentions')" aria-label="Fermer">&times;</button>
+    <h2 class="modal-legal-titre" id="titre-mentions">Mentions légales</h2>
+
+    <div class="legal-section">
+      <h3>Éditeur du site</h3>
+      <p><strong>Dénomination sociale :</strong> KAIROSNUNC</p>
+      <p><strong>Nom commercial :</strong> Helyos</p>
+      <p><strong>Forme juridique :</strong> Société à responsabilité limitée (SARL)</p>
+      <p><strong>Identifiant unique RNE :</strong> A1721813</p>
+      <p><strong>Matricule fiscal :</strong> B01158692021</p>
+      <p><strong>Siège social :</strong> A02 B2, Berj El Mekâteb, Centre Urbain Nord, 1082 El Menzah, Tunis, Tunisie</p>
+      <p><strong>Activité principale :</strong> Formation professionnelle (code 8022)</p>
+      <p><strong>Date de début d'activité :</strong> 27 mai 2021</p>
+      <p><strong>Gérante :</strong> Houda Ben Fredj</p>
+      <p><strong>Contact :</strong> <a href="mailto:houda@helyos.io">houda@helyos.io</a></p>
+    </div>
+
+    <div class="legal-section">
+      <h3>Directrice de la publication</h3>
+      <p>Houda Ben Fredj, en qualité de Gérante de KAIROSNUNC.</p>
+    </div>
+
+    <div class="legal-section">
+      <h3>Hébergement</h3>
+      <p><strong>Hébergeur :</strong> GitHub, Inc.</p>
+      <p><strong>Service :</strong> GitHub Pages</p>
+      <p><strong>Adresse :</strong> 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis</p>
+      <p><strong>Site :</strong> <a href="https://pages.github.com" target="_blank" rel="noopener">pages.github.com</a></p>
+    </div>
+
+    <div class="legal-section">
+      <h3>Propriété intellectuelle</h3>
+      <p>L'ensemble des contenus présents sur le site helyos.io (textes, visuels, logo, structure) est la propriété exclusive de KAIROSNUNC. Toute reproduction, représentation ou diffusion, même partielle, sans autorisation écrite préalable est interdite.</p>
+    </div>
+
+    <div class="legal-section">
+      <h3>Droit applicable</h3>
+      <p>Le présent site est soumis au droit tunisien. Tout litige relatif à son utilisation relève de la compétence des tribunaux tunisiens compétents.</p>
+    </div>
+
+    <p class="legal-date">Dernière mise à jour : juin 2026</p>
+  </div>
+</div>
+
+<!-- ─── Modale Politique de confidentialité ───────────────────── -->
+<div class="modal-legal" id="modal-confidentialite" role="dialog" aria-modal="true" aria-labelledby="titre-confidentialite">
+  <div class="modal-legal-boite">
+    <button class="modal-legal-fermer" onclick="fermerModal('modal-confidentialite')" aria-label="Fermer">&times;</button>
+    <h2 class="modal-legal-titre" id="titre-confidentialite">Politique de confidentialité</h2>
+
+    <div class="legal-section">
+      <h3>Responsable du traitement</h3>
+      <p>KAIROSNUNC (Helyos), SARL, A02 B2, Berj El Mekâteb, Centre Urbain Nord, 1082 El Menzah, Tunis, Tunisie.<br>Contact : <a href="mailto:houda@helyos.io">houda@helyos.io</a></p>
+    </div>
+
+    <div class="legal-section">
+      <h3>Données collectées</h3>
+      <p>Via le formulaire de contact, nous collectons les informations suivantes :</p>
+      <ul class="legal-liste">
+        <li>Prénom et nom</li>
+        <li>Adresse e-mail</li>
+        <li>Nom de l'entreprise (optionnel)</li>
+        <li>Objet de la demande et message libre</li>
+      </ul>
+      <p>Aucune autre donnée n'est collectée. Le site ne recourt à aucun cookie de traçage, aucun outil d'analyse comportementale et aucune technologie de pistage publicitaire.</p>
+    </div>
+
+    <div class="legal-section">
+      <h3>Finalité du traitement</h3>
+      <p>Les données collectées sont utilisées exclusivement pour répondre à votre demande et, le cas échéant, établir une relation commerciale. Elles ne sont transmises à aucun tiers.</p>
+    </div>
+
+    <div class="legal-section">
+      <h3>Durée de conservation</h3>
+      <p>Vos données sont conservées pour la durée nécessaire au traitement de votre demande, et au maximum trois (3) ans à compter du dernier contact.</p>
+    </div>
+
+    <div class="legal-section">
+      <h3>Base légale</h3>
+      <p>Le traitement est fondé sur votre consentement explicite, exprimé par l'envoi volontaire du formulaire, conformément à la loi organique tunisienne n° 2004-63 du 27 juillet 2004 portant sur la protection des données à caractère personnel.</p>
+    </div>
+
+    <div class="legal-section">
+      <h3>Vos droits</h3>
+      <p>Conformément à la loi n° 2004-63, vous disposez des droits suivants :</p>
+      <ul class="legal-liste">
+        <li><strong>Droit d'accès :</strong> obtenir une copie des données vous concernant</li>
+        <li><strong>Droit de rectification :</strong> corriger des données inexactes ou incomplètes</li>
+        <li><strong>Droit de suppression :</strong> demander l'effacement de vos données</li>
+        <li><strong>Droit d'opposition :</strong> vous opposer à un traitement</li>
+      </ul>
+      <p>Pour exercer ces droits : <a href="mailto:houda@helyos.io">houda@helyos.io</a></p>
+    </div>
+
+    <div class="legal-section">
+      <h3>Sécurité</h3>
+      <p>Le site est servi exclusivement en HTTPS. Les communications par e-mail sont chiffrées en transit. Aucune donnée de formulaire n'est stockée sur nos serveurs.</p>
+    </div>
+
+    <p class="legal-date">Dernière mise à jour : juin 2026</p>
+  </div>
+</div>
+
 
 <script>
   /* Navigation scroll */
@@ -1286,6 +1693,27 @@
       this.reset();
     }, 1200);
   });
+
+  /* Modales légales */
+  function ouvrirModal(id) {
+    document.getElementById(id).classList.add('ouverte');
+    document.body.style.overflow = 'hidden';
+  }
+  function fermerModal(id) {
+    document.getElementById(id).classList.remove('ouverte');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('.modal-legal').forEach(m => {
+    m.addEventListener('click', function(e) {
+      if (e.target === this) fermerModal(this.id);
+    });
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-legal.ouverte').forEach(m => fermerModal(m.id));
+    }
+  });
+
 </script>
 </body>
 </html>
