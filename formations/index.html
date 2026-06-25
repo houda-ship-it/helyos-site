@@ -538,7 +538,7 @@
 <div class="domaines-section">
 
   <!-- 01 Management -->
-  <div class="domaine-bloc reveal" id="management">
+  <div class="domaine-bloc" id="management">
     <div class="domaine-meta">
       <div class="domaine-numero">01</div>
       <div class="domaine-nom">Management &amp; Leadership</div>
@@ -572,7 +572,7 @@
   </div>
 
   <!-- 02 RH -->
-  <div class="domaine-bloc reveal" id="rh">
+  <div class="domaine-bloc" id="rh">
     <div class="domaine-meta">
       <div class="domaine-numero">02</div>
       <div class="domaine-nom">Ressources humaines</div>
@@ -606,7 +606,7 @@
   </div>
 
   <!-- 03 Soft skills -->
-  <div class="domaine-bloc reveal" id="softskills">
+  <div class="domaine-bloc" id="softskills">
     <div class="domaine-meta">
       <div class="domaine-numero">03</div>
       <div class="domaine-nom">Soft skills &amp; Développement personnel</div>
@@ -640,7 +640,7 @@
   </div>
 
   <!-- 04 Finance -->
-  <div class="domaine-bloc reveal" id="finance">
+  <div class="domaine-bloc" id="finance">
     <div class="domaine-meta">
       <div class="domaine-numero">04</div>
       <div class="domaine-nom">Finance &amp; Gestion</div>
@@ -670,7 +670,7 @@
   </div>
 
   <!-- 05 Digital -->
-  <div class="domaine-bloc reveal" id="digital">
+  <div class="domaine-bloc" id="digital">
     <div class="domaine-meta">
       <div class="domaine-numero">05</div>
       <div class="domaine-nom">Digital &amp; Intelligence artificielle</div>
@@ -702,7 +702,7 @@
   </div>
 
   <!-- 06 Vente -->
-  <div class="domaine-bloc reveal" id="vente">
+  <div class="domaine-bloc" id="vente">
     <div class="domaine-meta">
       <div class="domaine-numero">06</div>
       <div class="domaine-nom">Vente &amp; Relation client</div>
@@ -734,7 +734,7 @@
   </div>
 
   <!-- 07 HSE -->
-  <div class="domaine-bloc reveal" id="hse">
+  <div class="domaine-bloc" id="hse">
     <div class="domaine-meta">
       <div class="domaine-numero">07</div>
       <div class="domaine-nom">Hygiène, Sécurité &amp; Environnement</div>
@@ -766,7 +766,7 @@
   </div>
 
   <!-- 08 Logistique -->
-  <div class="domaine-bloc reveal" id="logistique">
+  <div class="domaine-bloc" id="logistique">
     <div class="domaine-meta">
       <div class="domaine-numero">08</div>
       <div class="domaine-nom">Logistique &amp; Transport</div>
@@ -796,7 +796,7 @@
   </div>
 
   <!-- 09 Maintenance -->
-  <div class="domaine-bloc reveal" id="maintenance">
+  <div class="domaine-bloc" id="maintenance">
     <div class="domaine-meta">
       <div class="domaine-numero">09</div>
       <div class="domaine-nom">Maintenance industrielle</div>
@@ -921,7 +921,7 @@
   /* Reveal */
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, { threshold: 0.08 });
+  }, { threshold: 0, rootMargin: "0px 0px -20px 0px" });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
   /* Formulaire catalogue */
