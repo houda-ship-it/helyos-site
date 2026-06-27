@@ -1189,6 +1189,56 @@
     .client-logo-item.fond-sombre:hover img {
       filter: grayscale(0%) opacity(1);
     }
+
+    /* ─── Témoignages ────────────────────────────────────────── */
+    .temoignages-grille {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 0;
+    }
+    @media (max-width: 860px) { .temoignages-grille { grid-template-columns: 1fr; } }
+
+    .temoignage-carte {
+      background: var(--blanc);
+      padding: 2.5rem 2.2rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .temoignage-carte::before {
+      content: '\201C';
+      font-family: var(--display);
+      font-size: 5rem;
+      color: var(--or-light);
+      line-height: 0.8;
+      display: block;
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+    .temoignage-texte {
+      font-size: 0.92rem;
+      color: var(--gris);
+      line-height: 1.85;
+      font-style: italic;
+      flex: 1;
+      margin-bottom: 1.5rem;
+    }
+    .temoignage-auteur {
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--gris-fin);
+    }
+    .temoignage-nom {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--encre);
+      margin-bottom: 0.2rem;
+    }
+    .temoignage-role {
+      font-size: 0.76rem;
+      color: var(--or);
+      letter-spacing: 0.05em;
+    }
   </style>
   <link rel="icon" type="image/x-icon" href="https://helyos.io/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="https://helyos.io/logo-helyos.png" />
@@ -1667,6 +1717,45 @@
     <p class="clients-note reveal" style="margin-bottom:0.5rem">
       Des entreprises industrielles, des groupes agroalimentaires, des institutions financières, des acteurs du numérique et des organisations de la société civile. Notre expérience couvre l'ensemble du territoire tunisien ainsi que la région MENA et l'Afrique du Nord.
     </p>
+  </div>
+</section>
+
+
+<!-- ─── Témoignages ──────────────────────────────────────────── -->
+<section id="temoignages">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Ce qu'ils disent</span>
+      <h2 class="section-titre">Témoignages</h2>
+      <div class="fil"></div>
+    </div>
+    <div class="temoignages-grille">
+
+      <div class="temoignage-carte reveal reveal-d1">
+        <p class="temoignage-texte">En quête d'une formation exhaustive sur les techniques d'approvisionnement, notre choix s'est naturellement porté sur Helyos. Leur proposition technique s'est distinguée par une approche pragmatique et adaptative, intégrant des contenus personnalisés qui répondaient précisément à nos besoins opérationnels. La clarté de leur démarche pédagogique, alliant innovation et interaction, a rendu la formation aussi enrichissante que captivante.</p>
+        <div class="temoignage-auteur">
+          <div class="temoignage-nom">Amira Dridi</div>
+          <div class="temoignage-role">CMR Group</div>
+        </div>
+      </div>
+
+      <div class="temoignage-carte reveal reveal-d2">
+        <p class="temoignage-texte">Dans le cadre d'une mission institutionnelle cruciale pour la coopération internationale, nous avons fait appel aux experts en ressources humaines de Helyos. Leur contribution a été unanimement saluée par toutes les parties prenantes du projet, soulignant la qualité exceptionnelle de leur travail. Helyos s'est avéré être un partenaire de confiance, délivrant des résultats appréciés à tous les niveaux de notre importante mission.</p>
+        <div class="temoignage-auteur">
+          <div class="temoignage-nom">Belhassen Turki</div>
+          <div class="temoignage-role">Project Manager, Salar International</div>
+        </div>
+      </div>
+
+      <div class="temoignage-carte reveal reveal-d3">
+        <p class="temoignage-texte">J'ai choisi Helyos pour développer mes compétences en prise de parole en public, et ma satisfaction a été totale. La formation dispensée a dépassé mes attentes, offrant un contenu enrichissant et des techniques pratiques qui ont considérablement amélioré ma confiance et mon efficacité lors de mes interventions publiques. Helyos se distingue par son approche pédagogique de qualité et son impact réel sur le développement des compétences.</p>
+        <div class="temoignage-auteur">
+          <div class="temoignage-nom">Inès Achour</div>
+          <div class="temoignage-role">Executive Director, Havas WW Tunisia</div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
