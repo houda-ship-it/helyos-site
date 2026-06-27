@@ -1147,6 +1147,48 @@
     }
     .catalogue-msg-err.visible { display: block; }
 
+
+    /* ─── Grille logos clients ───────────────────────────────── */
+    .clients-logos-grille {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0;
+      margin-bottom: 2.5rem;
+    }
+    @media (max-width: 900px) { .clients-logos-grille { grid-template-columns: repeat(4, 1fr); } }
+    @media (max-width: 580px) { .clients-logos-grille { grid-template-columns: repeat(3, 1fr); } }
+
+    .client-logo-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.8rem 1.4rem;
+      border: 1px solid transparent;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .client-logo-item:hover {
+      border-color: var(--gris-fin);
+      background: var(--blanc);
+    }
+    .client-logo-item img {
+      max-width: 110px;
+      max-height: 52px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      filter: grayscale(100%) opacity(0.45);
+      transition: filter 0.3s ease;
+    }
+    .client-logo-item:hover img {
+      filter: grayscale(0%) opacity(1);
+    }
+    /* Logos avec fond sombre : inverser en blanc puis griser */
+    .client-logo-item.fond-sombre img {
+      filter: grayscale(100%) opacity(0.35) brightness(0.3);
+    }
+    .client-logo-item.fond-sombre:hover img {
+      filter: grayscale(0%) opacity(1);
+    }
   </style>
   <link rel="icon" type="image/x-icon" href="https://helyos.io/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="https://helyos.io/logo-helyos.png" />
@@ -1561,26 +1603,69 @@
       <p class="section-intro">Des entreprises de secteurs variés, de la PME industrielle au grand groupe bancaire, nous font confiance depuis 2021.</p>
     </div>
 
-    <div class="clients-liste reveal">
-      <span class="client-tag">Groupe SFBT</span>
-      <span class="client-tag">Zitouna Tamkeen</span>
-      <span class="client-tag">Léoni</span>
-      <span class="client-tag">MSPE</span>
-      <span class="client-tag">Land'Or</span>
-      <span class="client-tag">Bulgin</span>
-      <span class="client-tag">SGBIA</span>
-      <span class="client-tag">Solagri</span>
-      <span class="client-tag">Cipi Actia</span>
-      <span class="client-tag">Groupe Meddis</span>
-      <span class="client-tag">ISLT</span>
-      <span class="client-tag">SMG</span>
-      <span class="client-tag">Tessi</span>
-      <span class="client-tag">SOSEM</span>
-      <span class="client-tag">ADDCI</span>
+    <div class="clients-logos-grille reveal">
+
+      <div class="client-logo-item" title="Léoni">
+        <img src="https://helyos.io/client-leoni.jpg" alt="Léoni" />
+      </div>
+      <div class="client-logo-item" title="Dräxlmaier">
+        <img src="https://helyos.io/client-draxlmaier.png" alt="Dräxlmaier" />
+      </div>
+      <div class="client-logo-item" title="Mersen">
+        <img src="https://helyos.io/client-mersen.jpg" alt="Mersen" />
+      </div>
+      <div class="client-logo-item" title="Macopharma">
+        <img src="https://helyos.io/client-macopharma.svg" alt="Macopharma" />
+      </div>
+      <div class="client-logo-item" title="Tessi">
+        <img src="https://helyos.io/client-tessi.png" alt="Tessi" />
+      </div>
+      <div class="client-logo-item" title="Rose Blanche Group">
+        <img src="https://helyos.io/client-rose-blanche.png" alt="Rose Blanche Group" />
+      </div>
+
+      <div class="client-logo-item" title="Land'Or">
+        <img src="https://helyos.io/client-landor.webp" alt="Land'Or" />
+      </div>
+      <div class="client-logo-item" title="Aziza">
+        <img src="https://helyos.io/client-aziza.jpg" alt="Aziza" />
+      </div>
+      <div class="client-logo-item" title="SFBT">
+        <img src="https://helyos.io/client-sfbt.png" alt="SFBT" />
+      </div>
+      <div class="client-logo-item fond-sombre" title="Zitouna Tamkeen">
+        <img src="https://helyos.io/client-zitouna-tamkeen.png" alt="Zitouna Tamkeen" />
+      </div>
+      <div class="client-logo-item fond-sombre" title="Zitouna Takaful">
+        <img src="https://helyos.io/client-zitouna-takaful.png" alt="Zitouna Takaful" />
+      </div>
+      <div class="client-logo-item" title="Insomea">
+        <img src="https://helyos.io/client-insomea.png" alt="Insomea" />
+      </div>
+
+      <div class="client-logo-item" title="AHK Tunisie">
+        <img src="https://helyos.io/client-ahk.svg" alt="AHK Tunisie" />
+      </div>
+      <div class="client-logo-item" title="Mövenpick">
+        <img src="https://helyos.io/client-movenpick.svg" alt="Mövenpick" />
+      </div>
+      <div class="client-logo-item" title="Free Fields Foundation">
+        <img src="https://helyos.io/client-free-fields.jpg" alt="Free Fields Foundation" />
+      </div>
+      <div class="client-logo-item" title="ATFI">
+        <img src="https://helyos.io/client-atfi.jpg" alt="ATFI" />
+      </div>
+      <div class="client-logo-item" title="AFC">
+        <img src="https://helyos.io/client-afc.png" alt="AFC" />
+      </div>
+      <div class="client-logo-item" title="CEED Tunisia">
+        <img src="https://helyos.io/client-ceed.jpg" alt="CEED Tunisia" />
+      </div>
+
     </div>
 
     <p class="clients-note reveal" style="margin-bottom:0.5rem">
-      Ces entreprises opèrent dans les secteurs de l'agroalimentaire, de l'industrie, de la finance, de la distribution, de la santé et des services. Notre expérience couvre l'ensemble du territoire tunisien ainsi que plusieurs pays de la région MENA.
+      Des entreprises industrielles, des groupes agroalimentaires, des institutions financières, des acteurs du numérique et des organisations de la société civile. Notre expérience couvre l'ensemble du territoire tunisien ainsi que la région MENA et l'Afrique du Nord.
     </p>
   </div>
 </section>
