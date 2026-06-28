@@ -570,7 +570,7 @@
       <div class="contact-info reveal">
         <div class="contact-ligne">
           <div class="contact-icone"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          <div><div class="contact-label">البريد الإلكتروني</div><div class="contact-val"><a href="mailto:houda@helyos.io">houda@helyos.io</a></div></div>
+          <div><div class="contact-label">البريد الإلكتروني</div><div class="contact-val"><a href="mailto:contact@helyos.io">contact@helyos.io</a></div></div>
         </div>
         <div class="contact-ligne">
           <div class="contact-icone"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.87 19.79 19.79 0 01.22 1.27a2 2 0 012-2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 6a16 16 0 006.29 6.29l.38-.38a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
@@ -659,7 +659,7 @@
       const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(this) });
       const data = await res.json();
       if (data.success) { msg.textContent = 'تم إرسال رسالتك. سنرد عليك خلال 48 ساعة.'; msg.className = 'form-message ok'; this.reset(); }
-      else { msg.textContent = 'حدث خطأ. يرجى المحاولة مجدداً أو مراسلتنا على houda@helyos.io'; msg.className = 'form-message err'; }
+      else { msg.textContent = 'حدث خطأ. يرجى المحاولة مجدداً أو مراسلتنا على contact@helyos.io'; msg.className = 'form-message err'; }
     } catch { msg.textContent = 'خطأ في الاتصال. يرجى المحاولة مجدداً.'; msg.className = 'form-message err'; }
     btn.disabled = false; btn.textContent = 'إرسال';
   });
