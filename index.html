@@ -1239,6 +1239,34 @@
       color: var(--or);
       letter-spacing: 0.05em;
     }
+
+    /* ─── Sélecteur de langue ────────────────────────────────── */
+    .lang-selector {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-left: 1rem;
+      border: 1px solid var(--gris-fin);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .lang-btn {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      font-weight: 500;
+      padding: 4px 9px;
+      color: var(--gris);
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+      text-decoration: none;
+      border-right: 1px solid var(--gris-fin);
+      font-family: var(--corps);
+      background: transparent;
+    }
+    .lang-btn:last-child { border-right: none; }
+    .lang-btn:hover { background: var(--fond-alt); color: var(--encre); }
+    .lang-btn.active { background: var(--or); color: var(--blanc); }
+    nav.scrolled .lang-selector { border-color: var(--gris-fin); }
   </style>
   <link rel="icon" type="image/x-icon" href="https://helyos.io/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="https://helyos.io/logo-helyos.png" />
@@ -1320,6 +1348,11 @@
       <a href="#clients">Clients</a>
       <a href="/blog/">Blog</a>
       <a href="#contact" class="nav-cta">Nous contacter</a>
+      <div class="lang-selector">
+        <a href="/" class="lang-btn active">FR</a>
+        <a href="/en/" class="lang-btn">EN</a>
+        <a href="/ar/" class="lang-btn">ع</a>
+      </div>
     </div>
 
     <button class="nav-burger" id="burger" aria-label="Menu" aria-expanded="false">
